@@ -4,9 +4,9 @@ competencias, etc y contará con un formulario para inscripción y dudas
 
 Integrantes:
 
-Benjamín Cortés -- Lider del proyecto
-Benjamín Ríos
-Noelia Muñoz
-Tamar Rojas
-Helena Amwamdter
-Juan Riquelme
+-Benjamín Cortés -- Lider del proyecto
+-Benjamín Ríos
+-Noelia Muñoz
+-Tamar Rojas
+-Helena Amwamdter
+-Juan Riquelme
