@@ -4,11 +4,13 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 @Entity
 public class Curso {
+
     //Atributos//
     @Id
     private String idCurso;
@@ -19,54 +21,61 @@ public class Curso {
     private String nombreProfesor;
     private Integer costo;
     //Relaciones entre clases persona//
-    @ManyToMany 
+    @OneToMany
     private List<Persona> Persona;
-    
+
     //Contructor//
-    
     public Curso() {
     }
 
-    public Curso(Date FechaInicio, Date FechaTermino, String Nombre_profesor, Integer Costo, List<Persona> Persona) {
-        this.FechaInicio = FechaInicio;
-        this.FechaTermino = FechaTermino;
-        this.Nombre_profesor = Nombre_profesor;
-        this.Costo = Costo;
+    public Curso(String idCurso, Date fechaInicio, Date fechaTermino, String nombreProfesor, Integer costo, List<Persona> Persona) {
+        this.idCurso = idCurso;
+        this.fechaInicio = fechaInicio;
+        this.fechaTermino = fechaTermino;
+        this.nombreProfesor = nombreProfesor;
+        this.costo = costo;
         this.Persona = Persona;
     }
-    
-    //Getter and Setter//
 
-    public Date getFechaInicio() {
-        return FechaInicio;
+    //Getter and Setter//
+    public String getIdCurso() {
+        return idCurso;
     }
 
-    public void setFechaInicio(Date FechaInicio) {
-        this.FechaInicio = FechaInicio;
+    public void setIdCurso(String idCurso) {
+        this.idCurso = idCurso;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
 
     public Date getFechaTermino() {
-        return FechaTermino;
+        return fechaTermino;
     }
 
-    public void setFechaTermino(Date FechaTermino) {
-        this.FechaTermino = FechaTermino;
+    public void setFechaTermino(Date fechaTermino) {
+        this.fechaTermino = fechaTermino;
     }
 
-    public String getNombre_profesor() {
-        return Nombre_profesor;
+    public String getNombreProfesor() {
+        return nombreProfesor;
     }
 
-    public void setNombre_profesor(String Nombre_profesor) {
-        this.Nombre_profesor = Nombre_profesor;
+    public void setNombreProfesor(String nombreProfesor) {
+        this.nombreProfesor = nombreProfesor;
     }
 
     public Integer getCosto() {
-        return Costo;
+        return costo;
     }
 
-    public void setCosto(Integer Costo) {
-        this.Costo = Costo;
+    public void setCosto(Integer costo) {
+        this.costo = costo;
     }
 
     public List<Persona> getPersona() {
@@ -76,5 +85,5 @@ public class Curso {
     public void setPersona(List<Persona> Persona) {
         this.Persona = Persona;
     }
-    
+
 }
