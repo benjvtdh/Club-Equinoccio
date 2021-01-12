@@ -5,10 +5,18 @@
  */
 package com.club.equinoccio.repositorios;
 
-/**
- *
- * @author corte
+import com.club.equinoccio.entidades.Salida;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+/*
+
+ SalidaRepositorio para importar funciones, de persistencia, actualización y eliminación de registros
+ de la entidad Salida
+
  */
-public interface SalidaRepositorio {
+
+@Repository
+public interface SalidaRepositorio extends JpaRepository <Salida , String > {
     
 }

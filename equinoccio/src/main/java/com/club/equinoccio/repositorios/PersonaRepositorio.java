@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.club.equinoccio.repositorios;
 
+import com.club.equinoccio.entidades.Persona;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
- *
- * @author corte
- */
-public interface PersonaRepositorio {
-    
+ * Repositorio de Persona
+**/
+
+@Repository
+public interface PersonaRepositorio extends JpaRepository <Persona , String> {
+      
 }
