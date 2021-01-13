@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Curso {
@@ -14,9 +15,12 @@ public class Curso {
     //Atributos//
     @Id
     private String idCurso;
+    
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern= "yyyy-MM-dd")
     private Date fechaInicio;
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern= "yyyy-MM-dd")
     private Date fechaTermino;
     private String nombreProfesor;
     private Integer costo;
