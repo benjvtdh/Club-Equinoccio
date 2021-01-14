@@ -18,4 +18,10 @@ public class InicioControlador {
     }
     
     
+    @GetMapping("/ingresar")
+    public ModelAndView ingresar(){
+        ModelAndView mv = new ModelAndView("formulario");
+        return mv;
+    }
+    
 }
