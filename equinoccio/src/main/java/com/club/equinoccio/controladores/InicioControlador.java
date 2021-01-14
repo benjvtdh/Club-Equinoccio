@@ -13,7 +13,7 @@ public class InicioControlador {
     
     @GetMapping
     public ModelAndView inicio(){
-    ModelAndView mv = new ModelAndView("inicio");
+    ModelAndView mv = new ModelAndView("index");
     return mv;
     }
     
