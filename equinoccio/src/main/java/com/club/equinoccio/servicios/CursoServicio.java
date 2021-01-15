@@ -4,21 +4,16 @@ package com.club.equinoccio.servicios;
 import com.club.equinoccio.entidades.Curso;
 import com.club.equinoccio.repositorios.CursoRepositorio;
 import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CursoServicio {
    @Autowired
-   private final CursoRepositorio cursoRepositorio;
-
-    public CursoServicio(CursoRepositorio cursoRepositorio) {
-        this.cursoRepositorio = cursoRepositorio;
-    }
-   
+   private CursoRepositorio cursoRepositorio;
     
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional(rollbackOn = Exception.class)
     public Curso guardar (Curso curso) throws Exception {
         if (curso.getFechaInicio()== null ){
             throw new Exception("El curso debe tener una fecha de inicio");
@@ -36,7 +31,7 @@ public class CursoServicio {
         }
         return curso.get();
     }
-     @Transactional(rollbackFor = Exception.class)
+     @Transactional(rollbackOn = Exception.class)
     public void eliminar(String id) throws Exception {
         Curso curso = buscar(id);
         cursoRepositorio.delete(curso);
