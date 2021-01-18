@@ -14,16 +14,10 @@ public class Seguridad extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/","/css/*","/js/*").permitAll()
+                .antMatchers("/assets/**").permitAll()
+                .antMatchers("/").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/").permitAll()
-                .and()
-                .logout().permitAll()
-                .and()
-                .csrf().disable();
-        
-        
+                .formLogin().permitAll();
     }
 }
