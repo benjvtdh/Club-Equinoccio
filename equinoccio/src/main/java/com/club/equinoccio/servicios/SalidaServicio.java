@@ -28,7 +28,7 @@ public class SalidaServicio {
     
     @Transactional(rollbackFor = Exception.class)
     public Salida guardar(Salida salida) throws Exception{
-        if(salida.getLista_persona() == null){
+        if(salida.getPersonas() == null){
             throw new Exception("La salida no tiene una lista de personas");
         }
         

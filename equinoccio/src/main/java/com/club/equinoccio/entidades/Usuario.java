@@ -20,14 +20,21 @@ public class Usuario implements Serializable {
     private String id;
     private String username;
     private String password;
+    private String nombres;
+    private String apellidos;
+    private String correo;
+    
 
     public Usuario() {
     }
 
-    public Usuario(String id, String username, String password) {
+    public Usuario(String id, String username, String password, String nombres, String apellidos, String correo) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
     }
 
     public String getId() {
@@ -53,4 +60,30 @@ public class Usuario implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
+    
 }
