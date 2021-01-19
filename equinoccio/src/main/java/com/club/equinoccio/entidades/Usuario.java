@@ -2,6 +2,7 @@
 package com.club.equinoccio.entidades;
 
 import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,6 +27,7 @@ public class Usuario implements Serializable {
     private String id;
     private String username;
     private String password;
+    private Integer estado;
     private String nombres;
     private String apellidos;
     private String correo;
@@ -41,14 +43,22 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String id, String username, String password, String nombres, String apellidos, String correo, List<Rol> roles) {
+    public Usuario(String id, String username, String password, Integer estado, String nombres, String apellidos, String correo, List<Rol> roles) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.estado = estado;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
         this.roles = roles;
+    }
+    
+    public void agregar(Rol rol){
+        if(roles==null){
+            roles = new LinkedList<Rol>();
+        }
+        roles.add(rol);
     }
 
     public String getId() {
@@ -73,6 +83,14 @@ public class Usuario implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Integer estado) {
+        this.estado = estado;
     }
 
     public String getNombres() {
@@ -107,7 +125,6 @@ public class Usuario implements Serializable {
         this.roles = roles;
     }
 
-  
-    
+   
     
 }

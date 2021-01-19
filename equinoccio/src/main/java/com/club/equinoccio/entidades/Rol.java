@@ -20,6 +20,10 @@ public class Rol implements Serializable {
     @ManyToMany(mappedBy = "roles")
     private List<Usuario> usuarios;
 
+    public Rol() {
+    }
+    
+
     public Rol(Integer perfilId, String cargo, List<Usuario> usuarios) {
         this.perfilId = perfilId;
         this.cargo = cargo;

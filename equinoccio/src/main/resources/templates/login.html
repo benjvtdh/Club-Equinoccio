@@ -10,13 +10,13 @@
     <link href="assets/css/login.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" th:action="@{/login}" method="POST">
   <img class="mb-4" src="assets/img/icono_preview_rev_1.png" alt="" width="150" height="150">
   <h4 class="h3 mb-3 font-weight-normal">Por favor inicie sesión</h4>
-  <label for="inputEmail" class="sr-only">Usurio o Correo </label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Usuario o  Correo" required autofocus>
+  <label for="inputEmail" class="sr-only">Usuario</label>
+  <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Usuario o  Correo" required autofocus>
   <label for="inputPassword" class="sr-only">Contreseña</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Contreseña " required>
+  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Contreseña " required>
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Recuérdame
