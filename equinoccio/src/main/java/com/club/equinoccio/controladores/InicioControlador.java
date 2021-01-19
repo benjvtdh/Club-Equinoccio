@@ -17,11 +17,4 @@ public class InicioControlador {
     return mv;
     }
     
-    
-    @GetMapping("/ingresar")
-    public ModelAndView ingresar(){
-        ModelAndView mv = new ModelAndView("formulario");
-        return mv;
-    }
-    
 }
