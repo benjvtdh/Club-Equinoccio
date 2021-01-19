@@ -10,7 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 
 
- @Entity
+@Entity
 public class Usuario implements Serializable {
 
     @Id

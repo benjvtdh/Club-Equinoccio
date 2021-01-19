@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         <title>Equinoccio - Club deportivo</title>
         <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <link rel="shortcut icon" href="assets/img/icono.png" type="img/x-icon">
         <link rel="stylesheet" href="assets/css/style.css">
         
@@ -51,7 +52,7 @@
   </div>
   
   <div class="d-flex justify-content-end align-items-center">
-        <a class="btn btn-sm btn-outline-secondary" href="login.html">Ingresa</a>
+        <a class="btn btn-sm btn-outline-secondary" th:href="@{/login}">Ingresa</a>
       </div>
   
 </nav>
