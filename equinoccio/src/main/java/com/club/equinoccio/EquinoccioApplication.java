@@ -22,31 +22,31 @@ public class EquinoccioApplication implements CommandLineRunner{
     
 
     public void run(String... args) throws Exception {
-        crearUsuarioConDosRoles();
+//        crearUsuarioConDosRoles();
         
 
     }
 
-    public void crearUsuarioConDosRoles() {
-        Usuario usuario = new Usuario();
-        usuario.setUsername("fernanda");
-        usuario.setPassword("12345");
-        usuario.setNombres("Fernanda");
-        usuario.setApellidos("Cortes");
-        usuario.setCorreo("fernanda@gmail.com");
-
-        Rol rol1 = new Rol();
-        rol1.setPerfilId(2);
-
-        Rol rol2 = new Rol();
-        rol2.setPerfilId(3);
-        
-        usuario.setEstado(1);
-
-        usuario.agregar(rol1);
-        usuario.agregar(rol2);
-        usuarioServicio.guardar(usuario);
-
-    }
+//    public void crearUsuarioConDosRoles() {
+//        Usuario usuario = new Usuario();
+//        usuario.setUsername("fernanda");
+//        usuario.setPassword("12345");
+//        usuario.setNombres("Fernanda");
+//        usuario.setApellidos("Cortes");
+//        usuario.setCorreo("fernanda@gmail.com");
+//
+//        Rol rol1 = new Rol();
+//        rol1.setPerfilId(2);
+//
+//        Rol rol2 = new Rol();
+//        rol2.setPerfilId(3);
+//        
+//        usuario.setEstado(1);
+//
+//        usuario.agregar(rol1);
+//        usuario.agregar(rol2);
+//        usuarioServicio.guardar(usuario);
+//
+//    }
 
 }

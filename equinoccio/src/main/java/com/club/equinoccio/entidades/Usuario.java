@@ -23,8 +23,9 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @Column(unique = true)
     private String id;
+    
+    @Column(unique = true)
     private String username;
     private String password;
     private Integer estado;
@@ -53,8 +54,9 @@ public class Usuario implements Serializable {
         this.correo = correo;
         this.roles = roles;
     }
-
-   
+    
+    // Metodo que permite agregar roles, a lista de roles del usuario
+    
     public void agregar(Rol rol){
         if(roles==null){
             roles = new LinkedList<Rol>();

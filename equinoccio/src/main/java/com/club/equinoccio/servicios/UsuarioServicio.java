@@ -28,7 +28,8 @@ public class UsuarioServicio implements UserDetailsService {
         this.usuarioRepositorio = usuarioRepositorio;
         this.encoder = encoder;
     }
-
+    
+    // Funcion para guardar usuario, con la contraseña encriptada
     @Transactional(rollbackFor = Exception.class)
     //recreando usuario//
     public void guardar(Usuario usuario) {
@@ -37,7 +38,13 @@ public class UsuarioServicio implements UserDetailsService {
         //guardando contraseña//
         usuarioRepositorio.save(usuario);
     }
-
+    
+    // Funcion para buscar todos los usuarios y listarlos
+    public List<Usuario> buscarTodos(){
+        return usuarioRepositorio.findAll();
+    }
+    
+    //Funcion para cargar el usuario por username
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 

@@ -10,11 +10,13 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /*
@@ -27,9 +29,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Salida implements Serializable {
     
     @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idSalida;
-    
-    @OneToMany(mappedBy = "salida",fetch = FetchType.LAZY)
+    //Relacion one to many con la clase persona y con fetch eager, para cargar todas las personas
+    @OneToMany(mappedBy = "salida",fetch = FetchType.EAGER)
     private List<Persona> personas;
     private String lugar_visitar;
     private String ruta_actividad;

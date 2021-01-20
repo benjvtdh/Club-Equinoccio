@@ -16,7 +16,7 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private DataSource dataSource;
-
+    // Configurar para unir tablas entre usuarios y roles
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
@@ -26,7 +26,8 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
                         + "inner join rol c on c.perfil_id = up.rol_id "
                         + "where u.username = ?");
     }
-
+    
+    //Configurar para restringir y renderizar vistas
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
