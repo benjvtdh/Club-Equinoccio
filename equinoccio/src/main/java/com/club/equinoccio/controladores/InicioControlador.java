@@ -1,4 +1,3 @@
-
 package com.club.equinoccio.controladores;
 
 import org.springframework.stereotype.Controller;
@@ -10,11 +9,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RequestMapping("/")
 public class InicioControlador {
-    
+
     @GetMapping
-    public ModelAndView inicio(){
-    ModelAndView mv = new ModelAndView("index");
-    return mv;
+    public ModelAndView inicio() {
+        ModelAndView mv = new ModelAndView("index");
+        return mv;
     }
+
+    @GetMapping("/login")
+    public ModelAndView login() {
+        ModelAndView mv = new ModelAndView("login");
+        return mv;
+    }
+
     
 }
