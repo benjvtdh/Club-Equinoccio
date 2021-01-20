@@ -40,6 +40,8 @@ public class EquinoccioApplication implements CommandLineRunner{
 
         Rol rol2 = new Rol();
         rol2.setPerfilId(3);
+        
+        usuario.setEstado(1);
 
         usuario.agregar(rol1);
         usuario.agregar(rol2);

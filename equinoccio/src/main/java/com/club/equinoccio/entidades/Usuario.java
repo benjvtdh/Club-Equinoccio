@@ -53,7 +53,8 @@ public class Usuario implements Serializable {
         this.correo = correo;
         this.roles = roles;
     }
-    
+
+   
     public void agregar(Rol rol){
         if(roles==null){
             roles = new LinkedList<Rol>();
@@ -125,6 +126,7 @@ public class Usuario implements Serializable {
         this.roles = roles;
     }
 
+    
    
     
 }
