@@ -59,6 +59,11 @@ public class UsuarioServicio implements UserDetailsService {
         
     }
     
+    public Usuario buscarPorNombre(String username){
+        return usuarioRepositorio.findByUsername(username);
+       
+    }
+    
     // TODO ESTO EN REPOSO
     
 //     Desactivar usuario 
@@ -69,7 +74,8 @@ public class UsuarioServicio implements UserDetailsService {
 //    }
     
     
-    //Funcion para cargar el usuario por username
+//  Funcion para cargar el usuario por username
+    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
