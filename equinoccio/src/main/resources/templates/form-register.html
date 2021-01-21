@@ -71,6 +71,7 @@
                 <div class="form-group">
                   <div class="row">
                     <div class="col">
+                        <input type="hidden" th:field="*{id}"/>
                     <label for="inputName">Nombre</label>
                     <input type="text" class="form-control" placeholder="Nombre" required="required" th:field="*{nombres}">
                     <div class="invalid-feedback">El nombre es obligatorio</div>

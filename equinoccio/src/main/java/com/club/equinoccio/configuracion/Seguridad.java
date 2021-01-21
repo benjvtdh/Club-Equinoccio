@@ -31,10 +31,15 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                //Vistas publicas
                 .antMatchers("/assets/**").permitAll()
                 .antMatchers("/","/register").permitAll()
+                //Vistas por roles
+                .antMatchers("/users/**").hasAnyAuthority("Administrador","Supervisor")
                 .anyRequest().authenticated()
                 .and()
+                //Vista login
                 .formLogin().loginPage("/login").permitAll();
+                
     }
 }

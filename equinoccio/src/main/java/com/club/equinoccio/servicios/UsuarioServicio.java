@@ -6,6 +6,7 @@ import com.club.equinoccio.repositorios.UsuarioRepositorio;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -44,6 +45,30 @@ public class UsuarioServicio implements UserDetailsService {
         return usuarioRepositorio.findAll();
     }
     
+    
+    // Buscar usuario por id
+    public Usuario buscar(String id) throws Exception{
+        Optional<Usuario> usuario = usuarioRepositorio.findById(id);
+        
+        if(!usuario.isPresent()){
+            throw new Exception("No existe un usuario con ese id");
+        }
+        
+        return usuario.get();
+        
+        
+    }
+    
+    // TODO ESTO EN REPOSO
+    
+//     Desactivar usuario 
+//    public void bloquer(String id) throws Exception{
+//        Usuario usuario = buscar(id);
+//        usuarioRepositorio.lock()
+//        
+//    }
+    
+    
     //Funcion para cargar el usuario por username
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -57,5 +82,6 @@ public class UsuarioServicio implements UserDetailsService {
         return new User(usuario.getUsername(), usuario.getPassword(), authorities);
 
     }
+    
 
 }

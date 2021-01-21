@@ -73,6 +73,7 @@
                                 <th scope="col">Apellido</th>
                                 <th scope="col">Nombre de Usuario</th>
                                 <th scope="col">Correo</th>
+                                <th scope="col">Estado</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
@@ -81,12 +82,15 @@
                             <tr scope="row" th:each="usuario : ${usuarios}">
                                 <td th:text="${usuario.nombres}" class="text-center">Nombre</td>
                                 <td th:text="${usuario.apellidos}"class="text-center">apellido</td>
-                                <td th:text="${usuario.username}"class="text-center">Correo</td>
-                                <td th:text="${usuario.correo}"class="text-center">nombre de usuario</td>
+                                <td th:text="${usuario.username}"class="text-center">nombre de usuario</td>
+                                <td th:text="${usuario.correo}"class="text-center">Correo</td>
+                                <td th:text="${usuario.estado}"class="text-center">Estado </td>
                                 <td class="col px-xl-2 d-flex justify-content-around w-100">
-                                    
-                                    <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
-                                    <a class="btn btn-info btn-sm" href="/usuario/eliminar/">Eliminar</a>
+                                    <a class="btn btn-primary btn-sm" th:href="@{/users/edit/}+${usuario.id}">Editar</a>
+                                    <!--- STAND BY>
+                                    <a class="btn btn-info btn-sm" th:href="@{/users/desactivate/}+${usuario.id}">Desactivar</a>
+                                    <a class="btn btn-info btn-sm" th:href="@{/users/activate/}+${usuario.id}">Activar</a>
+                                    <--->
                                 </td>
                             </tr>
                         </tbody>

@@ -403,10 +403,8 @@ section {
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-links {
-    
   opacity: 1;
   bottom: 45%;
-
 }
 
 /*--------------------------------------------------------------
@@ -608,7 +606,6 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-
   background: #183b63;
   border: 0;
   padding: 10px 24px;
@@ -617,9 +614,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-    
   background: #0062cc;
-
 }
 
 
