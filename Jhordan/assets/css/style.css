@@ -37,6 +37,101 @@ body{
 }
 
 /*--------------------------------------------------------------
+# AVATAR
+--------------------------------------------------------------*/
+
+
+.avatar-sm {
+    font-size: .860rem;
+    width: 36px;
+    height: 36px;
+}
+.avatar {
+    font-size: 1rem;
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    color: #fff;
+    border-radius: .375rem;
+    background-color: #adb5bd;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar:not(.navbar-nav-hover) .dropdown-menu.show {
+    animation: show-navbar-dropdown .25s ease forwards;
+    pointer-events: auto;
+    opacity: 1;
+}
+.navbar-expand .navbar-nav .dropdown-menu {
+    position: absolute !important;
+}
+.navbar .dropdown-menu {
+    position: absolute !important;
+    margin: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+.dropdown-menu.show {
+    display: block;
+}
+.dropdown-menu {
+    min-width: 12rem;
+}
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+.dropdown-menu {
+    font-size: 1rem;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    margin: .125rem 0 0;
+    padding: .5rem 0;
+    list-style: none;
+    text-align: left;
+    color: #525f7f;
+    border: 0 solid rgba(0,0,0,.15);
+    border-radius: .4375rem;
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: 0 50px 100px rgba(50,50,93,.1),0 15px 35px rgba(50,50,93,.15),0 5px 15px rgba(0,0,0,.1);
+}
+
+.dropdown-menu .dropdown-item {
+    font-size: .875rem;
+    padding: .5rem 1rem;
+}
+.dropdown-item {
+    font-weight: 400;
+    display: block;
+    clear: both;
+    width: 100%;
+    padding: .5rem 1rem;
+    text-align: inherit;
+    white-space: nowrap;
+    color: #212529;
+    border: 0;
+    background-color: transparent;
+}
+
+.dropdown-menu .dropdown-item > i  {
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu-right {
+    right: 5px;
+    left: auto;
+}
+}
+/*--------------------------------------------------------------
 # HEADER
 --------------------------------------------------------------*/
 
