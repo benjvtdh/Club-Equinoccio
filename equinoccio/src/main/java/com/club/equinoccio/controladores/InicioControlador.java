@@ -22,14 +22,12 @@ public class InicioControlador {
     public InicioControlador(UsuarioServicio usuarioServicio) {
         this.usuarioServicio = usuarioServicio;
     }
-    
-    
-    @GetMapping
-    public ModelAndView inicio() {
+    @GetMapping("/")
+    public ModelAndView inicio(){
         ModelAndView mv = new ModelAndView("index");
         return mv;
     }
-
+    
     @GetMapping("/login")
     public ModelAndView login() {
         ModelAndView mv = new ModelAndView("login");
@@ -37,23 +35,27 @@ public class InicioControlador {
     }
     
     @GetMapping("/index")
-    public String recuperar(Authentication auth, HttpSession session){
+    public String recuperar(Authentication auth,HttpSession session) throws Exception{
         String username = auth.getName();
-        System.out.println("Nombre del usuario: " + username);
-        for (GrantedAuthority rol : auth.getAuthorities()) {
-            System.out.println("ROL: " + rol.getAuthority());
-        }
-        
-//        if(session.getAttribute("usuario") == null ){
-//            UserDetails usuario = usuarioServicio.loadUserByUsername(username);
-//            usuario.g
-//            usuario.setPassword(null);
-//            System.out.println(usuario);
-//            session.setAttribute("usuario", usuario);
-//            
+//        String id = (String) session.getAttribute("id");
+//        System.out.println(session);
+//        System.out.println("id: " + session.getAttribute("id"));
+//        if(id == null){
+//            throw new Exception("El id es nulo");
 //        }
+////        Usuario usuario = usuarioServicio.buscar(id);
+//        usuario.setPassword(null);
+        if(session.getAttribute("usuario") == null){
+            Usuario usuario = usuarioServicio.buscarPorUsername(username);
+            usuario.setPassword(null);
+            System.out.println("usuario: "+ usuario.getUsername());
+            session.setAttribute("usuario", usuario);
+        }
         return "redirect:/";
-        
+//        ModelAndView mv = new ModelAndView("index");
+//        mv.addObject("usuario", usuario);
+//        return mv;
+//        
         
         
     }

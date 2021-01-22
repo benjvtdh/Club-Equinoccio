@@ -7,6 +7,7 @@ import com.club.equinoccio.repositorios.UsuarioRepositorio;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,6 +18,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Service
 public class UsuarioServicio implements UserDetailsService {
@@ -45,6 +48,10 @@ public class UsuarioServicio implements UserDetailsService {
         return usuarioRepositorio.findAll();
     }
     
+    // Funcion opcional
+    public Usuario buscarPorUsername(String username){
+        return usuarioRepositorio.findByUsername(username);
+    }
     
     // Buscar usuario por id
     public Usuario buscar(String id) throws Exception{
@@ -58,12 +65,7 @@ public class UsuarioServicio implements UserDetailsService {
         
         
     }
-    
-    public Usuario buscarPorNombre(String username){
-        return usuarioRepositorio.findByUsername(username);
-       
-    }
-    
+   
     // TODO ESTO EN REPOSO
     
 //     Desactivar usuario 
@@ -84,7 +86,12 @@ public class UsuarioServicio implements UserDetailsService {
             throw new UsernameNotFoundException("Usuario no encontrado");
         }
         List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("USER"));
-
+//        ServletRequestAttributes servRequest = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+//        HttpSession httpSession = servRequest.getRequest().getSession(true);
+//        httpSession.setAttribute("id", usuario.getId());
+//        System.out.println(httpSession);
+//        System.out.println(usuario.getId());
+//        System.out.println("id: " + httpSession.getAttribute("id"));
         return new User(usuario.getUsername(), usuario.getPassword(), authorities);
 
     }
