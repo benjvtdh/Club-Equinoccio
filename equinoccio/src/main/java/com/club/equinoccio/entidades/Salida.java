@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -9,10 +9,14 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /*
@@ -21,12 +25,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 
  */
 @Entity
+@Table(name="salidas")
 public class Salida implements Serializable {
     
     @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idSalida;
-    @OneToMany
-    private List<Persona> lista_persona;
+    //Relacion one to many con la clase persona y con fetch eager, para cargar todas las personas
+    @OneToMany(mappedBy = "salida",fetch = FetchType.EAGER)
+    private List<Persona> personas;
     private String lugar_visitar;
     private String ruta_actividad;
     private String tipo_actividad;
@@ -41,9 +49,9 @@ public class Salida implements Serializable {
     public Salida() {
     }
 
-    public Salida(String idSalida, List<Persona> lista_persona, String lugar_visitar, String ruta_actividad, String tipo_actividad, Date fecha_inicio, Date fecha_termino) {
+    public Salida(String idSalida, List<Persona> personas, String lugar_visitar, String ruta_actividad, String tipo_actividad, Date fecha_inicio, Date fecha_termino) {
         this.idSalida = idSalida;
-        this.lista_persona = lista_persona;
+        this.personas = personas;
         this.lugar_visitar = lugar_visitar;
         this.ruta_actividad = ruta_actividad;
         this.tipo_actividad = tipo_actividad;
@@ -59,12 +67,12 @@ public class Salida implements Serializable {
         this.idSalida = idSalida;
     }
 
-    public List<Persona> getLista_persona() {
-        return lista_persona;
+    public List<Persona> getPersonas() {
+        return personas;
     }
 
-    public void setLista_persona(List<Persona> lista_persona) {
-        this.lista_persona = lista_persona;
+    public void setPersonas(List<Persona> personas) {
+        this.personas = personas;
     }
 
     public String getLugar_visitar() {
@@ -109,3 +117,5 @@ public class Salida implements Serializable {
     
     
 }
+
+   

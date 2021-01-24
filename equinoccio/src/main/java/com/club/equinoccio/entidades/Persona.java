@@ -3,7 +3,11 @@ package com.club.equinoccio.entidades;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /*
 
@@ -15,6 +19,7 @@ import javax.persistence.Id;
 
 
 @Entity
+@Table(name = "personas")
 public class Persona implements Serializable {
     
     @Id
@@ -24,17 +29,22 @@ public class Persona implements Serializable {
     private String nacionalidad;
     private String domicilio;
     private String telefono;
+ 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "salida_id")
+    private Salida salida;
 
     public Persona() {
     }
 
-    public Persona(String rut, String Nombre, Integer edad, String nacionalidad, String domicilio, String telefono) {
+    public Persona(String rut, String Nombre, Integer edad, String nacionalidad, String domicilio, String telefono, Salida salida) {
         this.rut = rut;
         this.Nombre = Nombre;
         this.edad = edad;
         this.nacionalidad = nacionalidad;
         this.domicilio = domicilio;
         this.telefono = telefono;
+        this.salida = salida;
     }
 
     public String getRut() {
@@ -84,7 +94,13 @@ public class Persona implements Serializable {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    
-    
+
+    public Salida getSalida() {
+        return salida;
+    }
+
+    public void setSalida(Salida salida) {
+        this.salida = salida;
+    }
+
 }
