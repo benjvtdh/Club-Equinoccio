@@ -20,6 +20,7 @@ public class RegistrerControlador {
         this.usuarioServicio = usuarioServicio;
     }
     
+    // Controlador para crear un usuario
     @GetMapping
     public ModelAndView crear(){  
         Usuario usuario = new Usuario();
@@ -27,6 +28,8 @@ public class RegistrerControlador {
         mv.addObject("usuario",usuario);
         return mv;
     }
+    
+    //Controlador para registrar o guardar un registro
     @PostMapping
     public String regitrar(Usuario usuario){
         usuario.setEstado(1);

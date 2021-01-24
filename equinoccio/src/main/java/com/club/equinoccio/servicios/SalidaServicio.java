@@ -49,6 +49,7 @@ public class SalidaServicio {
         return salidaRepositorio.findAll();
     }
     
+    
     @Transactional(rollbackFor = Exception.class)
     public void eliminar(String idSalida) throws Exception{
         Salida salida = buscar(idSalida);

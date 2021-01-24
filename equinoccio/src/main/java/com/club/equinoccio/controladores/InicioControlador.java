@@ -34,6 +34,7 @@ public class InicioControlador {
         return mv;
     }
     
+    // Controlador para recuperar el usuario al auntenticarse en el index
     @GetMapping("/index")
     public String recuperar(Authentication auth,HttpSession session) throws Exception{
         String username = auth.getName();
