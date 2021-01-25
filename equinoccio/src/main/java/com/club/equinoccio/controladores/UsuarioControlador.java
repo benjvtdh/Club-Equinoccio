@@ -28,9 +28,9 @@ public class UsuarioControlador {
     
     
     //Controlador para listar los usuarios
-    @GetMapping("/users")
+    @GetMapping("/perfil")
     public ModelAndView listar_usuarios() {
-        ModelAndView mv = new ModelAndView("lista-users");
+        ModelAndView mv = new ModelAndView("panel_perfil");
         mv.addObject("usuarios", usuarioServicio.buscarTodos());
         return mv;
     }

@@ -40,11 +40,16 @@ public class Usuario implements Serializable {
     @JoinTable(name="usuario_rol", 
             joinColumns = @JoinColumn(name = "usuario_id" ),
             inverseJoinColumns = @JoinColumn(name="rol_id"))
-    private List<Rol> roles;    
+    private List<Rol> roles;
+    
+    @Column(nullable=true)
+    private String foto_perfil;
+    
+    
     public Usuario() {
     }
 
-    public Usuario(String id, String username, String password, Integer estado, String nombres, String apellidos, String correo, List<Rol> roles) {
+    public Usuario(String id, String username, String password, Integer estado, String nombres, String apellidos, String correo, List<Rol> roles, String foto_perfil) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -53,7 +58,10 @@ public class Usuario implements Serializable {
         this.apellidos = apellidos;
         this.correo = correo;
         this.roles = roles;
+        this.foto_perfil = foto_perfil;
     }
+
+   
     
     // Metodo que permite agregar roles, a lista de roles del usuario
     
@@ -128,7 +136,13 @@ public class Usuario implements Serializable {
         this.roles = roles;
     }
 
+    public String getFoto_perfil() {
+        return foto_perfil;
+    }
+
+    public void setFoto_perfil(String foto_perfil) {
+        this.foto_perfil = foto_perfil;
+    }
     
-   
     
 }

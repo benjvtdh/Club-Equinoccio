@@ -33,7 +33,7 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 //Vistas publicas
                 .antMatchers("/assets/**").permitAll()
-                .antMatchers("/","/register").permitAll()
+                .antMatchers("/","/register/**","/perfil").permitAll()
                 //Vistas por roles
                 .antMatchers("/users/**").hasAnyAuthority("Administrador","Supervisor")
                 .anyRequest().authenticated()
