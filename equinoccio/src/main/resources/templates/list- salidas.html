@@ -85,24 +85,29 @@
                         </thead>
                         <tbody>
                             <!--ACA DEBEN USAR THYMELEAF (th:each)-->
-                            <tr>
+                            <tr scope="row" th:each="salida : ${salidas}" >
                                 <td scope="row"> <img src="assets/img/pexels-simon-migaj-747964.jpg" width="75" height="75" alt=""></td>
-                                <td class="text-center">Nombre</td>
-                                <td class="text-center">Descripción</td>
-                                <td class="text-center">Lugar a visitar</td>
-                                <td class="text-center">Ruta a visitar</td>
-                                <td class="text-center">Tipo de actividad</td>
-                                <td class="text-center">Fecha de Inicio</td>
-                                <td class="text-center">Fecha de Término</td>
+                                <td th:text="${salida.nombres}"class="text-center">Nombre</td>
+                                <td th:text="$(salida.descripcion)"class="text-center">Descripción</td>
+                                <td th:text="$(salida.lugar_visitar)"class="text-center">Lugar a visitar</td>
+                                <td th:text="$(salida.ruta_actividad)"class="text-center">Ruta a visitar</td>
+                                <td th:text="$(salida.tipo_actividad)"class="text-center">Tipo de actividad</td>
+                                <td th:text="$(salida.fecha_inicio)"class="text-center">Fecha de Inicio</td>
+                                <td th:text="$(salida.fecha_termino)"class="text-center">Fecha de Término</td>
                                 <td class="col px-xl-2 d-flex justify-content-around w-100">
                                     <!--EN ESTOS DOS BOTONS TIENEN QUE AGREGAR EL ID DEL USUARIO AL LINK CON THYMELEAF-->
                                     <!--TIENE QUE QUEDAR ALGO COMO /usuario/form/(id del usuario)-->
-                                    <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
-                                    <a class="btn btn-info btn-sm" href="/usuario/eliminar/">Eliminar</a>
+                                    <a class="btn btn-primary btn-sm" th:href="@{/salida/form/}+${salida.id}">Editar</a>
+                                    <a class="btn btn-info btn-sm" th:href="@{/salida/eliminar/}+${salida.id}">Eliminar</a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                 <!-- Caso en que esté la lista vacía de salida
+                 -->
+                <div th:if="${salida.isEmpty()}">
+                    <h3>La lista de salida esta vacía</h3>
                 </div>
             </div>
             <div class="container mt-5 mb-xl-5 text-center">

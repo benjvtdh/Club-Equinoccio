@@ -72,33 +72,34 @@
                 <div class="row">
                   <div class="col">
                   <label for="inputFechaInicio">Fecha de Inicio</label>
-                  <input type="date" class="form-control" id="fechaInicio">
+                  <input type="date" class="form-control" id="fechaInicio"  required="required"th:field="*{fecha_inicio}">
+                  <div class="invalid-feedback">La fecha de inicio es obligatorio</div>
                 </div>
                 <div class="col">
                   <label for="inputFechaTermino">Fecha de Término</label>
-                  <input type="date" class="form-control" id="fechaTermino">
+                  <input type="date" class="form-control" id="fechaTermino"  required="required" th:field="*{fecha_termino}" >
                 </div>
               </div>
             </div>
                 <div class="form-group">
                     <label for="Nombre">Nombre</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" placeholder="Nombre" required="required" th:field="*{nombres}">
                 </div>
                 <div class="form-group">
                     <label for="Descripción">Descripción</label>
-                    <textarea class="form-control" id="Descripción" rows="3"></textarea>
+                    <textarea class="form-control" id="Descripción" rows="3" placeholder="Descripcion" th:field="*{descripcion}"></textarea>
                  </div>
                 <div class="form-group">
                     <label for="lugar">Lugar a Visitar</label>
-                    <input type="text" class="form-control" id="lugar">
+                    <input type="text" class="form-control" id="lugar" placeholder="Lugar a Visitar" required="required" th:field="*{lugar_visitar}">
                 </div>
                 <div class="form-group">
                     <label for="ruta">Ruta a Visitar</label>
-                    <input type="text" class="form-control" id="ruta">
+                    <input type="text" class="form-control" id="ruta" placeholder="Ruta a Visitar" required="required" th:field="*{ruta_actividad}">
                 </div>
                 <div class="form-group">
                     <label for="actividad">Tipo de Actividad</label>
-                    <select id="actividad" class="form-control">
+                    <select id="actividad" class="form-control" required="required" th:field="*{tipo_actividad}">
                       <option selected>Elegir...</option>
                       <option>Senderismo</option>
                       <option>Montañismo</option>
