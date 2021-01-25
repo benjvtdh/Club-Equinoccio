@@ -4,14 +4,20 @@ package com.club.equinoccio.controladores;
 import com.club.equinoccio.entidades.Rol;
 import com.club.equinoccio.entidades.Usuario;
 import com.club.equinoccio.servicios.UsuarioServicio;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.support.RequestContextUtils;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-@RequestMapping("/register")
+
 public class RegistrerControlador {
     
     private final UsuarioServicio usuarioServicio;
@@ -21,7 +27,7 @@ public class RegistrerControlador {
     }
     
     // Controlador para crear un usuario
-    @GetMapping
+    @GetMapping("/register")
     public ModelAndView crear(){  
         Usuario usuario = new Usuario();
         ModelAndView mv = new ModelAndView("form-register");
@@ -30,14 +36,33 @@ public class RegistrerControlador {
     }
     
     //Controlador para registrar o guardar un registro
-    @PostMapping
-    public String regitrar(Usuario usuario){
+    @PostMapping("/register")
+    public RedirectView regitrar(
+            HttpServletRequest request,
+            @ModelAttribute Usuario usuario, 
+            RedirectAttributes reAttr){
+        
         usuario.setEstado(1);
         Rol rol = new Rol();
         rol.setPerfilId(3);
         usuario.agregar(rol);
-        usuarioServicio.guardar(usuario);
-        return "redirect:/";
+//        usuarioServicio.guardar(usuario);
+        reAttr.addFlashAttribute("usuario",usuario);
+        return new RedirectView("/register/sucess",true);
     }
     
+    @GetMapping("/register/sucess")
+    public String getSucess(HttpServletRequest request){
+
+        Map<String, ? > inputFlashMap = RequestContextUtils.getInputFlashMap(request);
+        if(inputFlashMap != null){
+            Usuario usuario = (Usuario) inputFlashMap.get("usuario");
+            return "index";
+        }
+        
+        else{
+            return "redirect:/register";
+        }
+                
+    }
 }
