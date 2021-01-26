@@ -90,13 +90,13 @@
                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>
                <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" href="panel_perfil.html">Perfil</a>
+    <a class="nav-link" href="panel_perfil.html">Perfil</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="panel_perfil_salidas.html">Salidas</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="panel_perfil_usuarios.html">Usuarios</a>
+    <a class="nav-link  active" href="panel_perfil_usuarios.html">Usuarios</a>
   </li>
 </ul>
                <!-- Tab panes -->
@@ -104,69 +104,52 @@
                         <div class="card card-custom card-stretch">
                            <div class="card-header py-3">
                               <div class="card-title align-items-start flex-column">
-                                 <h3 class="card-label font-weight-bolder text-dark">Informacion personal</h3>
-                                 <span class="text-muted font-weight-bold font-size-sm mt-1">Actualice su información personal</span>
+                                 <h3 class="card-label font-weight-bolder text-dark">Usuarios registrados</h3>
+                                 <span class="text-muted font-weight-bold font-size-sm mt-1">Informacion de usuarios</span>
                               </div>
                            </div>
-                        
-                             
-                              <div class="card-body">
-                                 <div class="row">
-                                    <label class="col-xl-3"></label>
-                                    <div class="col-lg-9 col-xl-6">
-                                       <h5 class="font-weight-bold mb-6">Información del usuario</h5>
-                                    </div>
-                                    <div class="card-toolbar">
-                              <button type="reset" class="btn btn-info mr-2 btn-sm"> Editar perfil <i class="fa fa-pencil-square-o"></i></button>
+                           <div class="card-body">
+                                 <table class="table">
+                                    <thead class="thead-dark">
+                                       <tr>
+                                          <th class="text-center" scope="col">Nombre</th>
+                                         <th class="text-center" scope="col">Apellido</th>
+                                         <th class="text-center" scope="col">Nombre de Usuario</th>
+                                         <th class="text-center" scope="col">Acciones</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td class="text-center" scope="row">Nombre</td>
+                                         <td class="text-center">apellido</td>
+                                         <td class="text-center">nombre de usuario</td>
+                                         <td class="text-center">
+                                             <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
+                                             <a class="btn btn-danger btn-sm" href="/usuario/eliminar/">Eliminar</a>
+                                         </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center" scope="row">Nombre</td>
+                                         <td class="text-center">apellido</td>
+                                         <td class="text-center">nombre de usuario</td>
+                                         <td class="text-center">
+                                             <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
+                                             <a class="btn btn-danger btn-sm" href="/usuario/eliminar/">Eliminar</a>
+                                         </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="text-center" scope="row">Nombre</td>
+                                         <td class="text-center">apellido</td>
+                                         <td class="text-center">nombre de usuario</td>
+                                         <td class="text-center">
+                                             <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
+                                             <a class="btn btn-danger btn-sm" href="/usuario/eliminar/">Eliminar</a>
+                                         </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                  
                            </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Avatar</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                       <div class="picture-container">
-                                          <div class="picture">
-                                             <img src="assets/img/perfil/usuario-1.jpg" class="picture-src">
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Nombre</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                        <h5>John</h5>
-                                    </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Apellido</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                        <h5>Snow</h5>
-                                    </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Nombre usuario</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                        <h5>JohnStark</h5>
-                                    </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Correo</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                        <h5>john.stark@gmail.com</h5>
-                                    </div>
-                                 </div>
-                              </div>
-                           <!--end::Form-->
-                           
                         </div>
                </div>
             </div>
