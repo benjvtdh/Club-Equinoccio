@@ -34,6 +34,7 @@ public class Salida implements Serializable {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idSalida;
     private String descripcion;
+    private String foto;
     //Relacion one to many con la clase persona y con fetch eager, para cargar todas las personas
     @OneToMany(mappedBy = "salida",fetch = FetchType.EAGER)
     private List<Persona> personas;
@@ -51,9 +52,10 @@ public class Salida implements Serializable {
     public Salida() {
     }
 
-    public Salida(String idSalida, String descripcion, List<Persona> personas, String lugar_visitar, String ruta_actividad, String tipo_actividad, Date fecha_inicio, Date fecha_termino) {
+    public Salida(String idSalida, String descripcion, String foto, List<Persona> personas, String lugar_visitar, String ruta_actividad, String tipo_actividad, Date fecha_inicio, Date fecha_termino) {
         this.idSalida = idSalida;
         this.descripcion = descripcion;
+        this.foto = foto;
         this.personas = personas;
         this.lugar_visitar = lugar_visitar;
         this.ruta_actividad = ruta_actividad;
@@ -61,6 +63,8 @@ public class Salida implements Serializable {
         this.fecha_inicio = fecha_inicio;
         this.fecha_termino = fecha_termino;
     }
+
+   
 
      public void agregar_persona(Persona persona){
         if(personas==null){
@@ -123,6 +127,22 @@ public class Salida implements Serializable {
 
     public void setFecha_termino(Date fecha_termino) {
         this.fecha_termino = fecha_termino;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
     
     
