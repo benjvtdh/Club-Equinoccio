@@ -1,21 +1,3 @@
-$(document).ready(function(){
-// Prepare the preview for profile picture
-    $("#wizard-picture").change(function(){
-        readURL(this);
-    });
-});
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-
 !(function($) {
   "use strict";
 
@@ -174,7 +156,7 @@ function readURL(input) {
   });
 
   // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
+   $(".testimonials-carousel").owlCarousel({
     autoplay: true,
     dots: true,
     loop: true,

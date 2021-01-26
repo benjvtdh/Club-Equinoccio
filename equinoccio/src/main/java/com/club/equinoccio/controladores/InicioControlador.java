@@ -50,6 +50,7 @@ public class InicioControlador {
             Usuario usuario = usuarioServicio.buscarPorUsername(username);
             usuario.setPassword(null);
             System.out.println("usuario: "+ usuario.getUsername());
+            System.out.println("objeto usuario" + usuario);
             session.setAttribute("usuario", usuario);
         }
         return "redirect:/";

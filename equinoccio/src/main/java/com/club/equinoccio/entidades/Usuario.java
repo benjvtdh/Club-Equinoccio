@@ -142,6 +142,12 @@ public class Usuario implements Serializable {
     public void setFoto_perfil(String foto_perfil) {
         this.foto_perfil = foto_perfil;
     }
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
     
 }
