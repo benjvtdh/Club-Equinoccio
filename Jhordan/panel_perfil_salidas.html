@@ -34,7 +34,7 @@
                         <a class="nav-link scrollto" href="#about">Nosotros</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link scrollto" href="#salida">Salidas</a>
+                        <a class="nav-link scrollto" href="index.html#salida">Salidas</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link scrollto" href="#portfolio">Galeria</a>
@@ -63,14 +63,6 @@
                            <i class="fa fa-user"></i>
                            <span>Mi perfil</span>
                            </a>
-                           <a href="#!" class="dropdown-item">
-                           <i class="fa fa-cog"></i>
-                           <span>Configuracion</span>
-                           </a>
-                           <a href="#!" class="dropdown-item">
-                           <i class="fa fa-calendar"></i>
-                           <span>Salidas</span>
-                           </a>
                            <div class="dropdown-divider"></div>
                            <a href="#!" class="dropdown-item">
                            <i class="fa fa-sign-out"></i>
@@ -90,10 +82,10 @@
                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>
                <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" href="panel_perfil.html">Perfil</a>
+    <a class="nav-link " href="panel_perfil.html">Perfil</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="panel_perfil_salidas.html">Salidas</a>
+    <a class="nav-link active" href="panel_perfil_salidas.html">Salidas</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="panel_perfil_usuarios.html">Usuarios</a>
@@ -101,73 +93,65 @@
 </ul>
                <!-- Tab panes -->
                <div class="content">
+                 
                         <div class="card card-custom card-stretch">
                            <div class="card-header py-3">
                               <div class="card-title align-items-start flex-column">
-                                 <h3 class="card-label font-weight-bolder text-dark">Informacion personal</h3>
-                                 <span class="text-muted font-weight-bold font-size-sm mt-1">Actualice su información personal</span>
+                                 <h3 class="card-label font-weight-bolder text-dark">Salidas programadas</h3>
+                                 <span class="text-muted font-weight-bold font-size-sm mt-1">Informacion de salidas</span>
                               </div>
                            </div>
-                        
-                             
-                              <div class="card-body">
-                                 <div class="row">
-                                    <label class="col-xl-3"></label>
-                                    <div class="col-lg-9 col-xl-6">
-                                       <h5 class="font-weight-bold mb-6">Información del usuario</h5>
-                                    </div>
-                                    <div class="card-toolbar">
-                              <button type="reset" class="btn btn-info mr-2 btn-sm"> Editar perfil <i class="fa fa-pencil-square-o"></i></button>
-                           </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Avatar</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                       <div class="picture-container">
-                                          <div class="picture">
-                                             <img src="assets/img/perfil/usuario-1.jpg" class="picture-src">
+                           <div class="card-body">
+                              <div class="table-responsive">
+                                 <table class="table">
+                                    <thead class="thead-dark">
+                                       <tr>
+                                          <th scope="col" class="text-center">Imagen</th>
+                                          <th scope="col" class="text-center">Nombre Salida</th>
+                                          <th scope="col" class="text-center">Lugar a visitar</th>
+                                          <th scope="col" class="text-center">Tipo de actividad</th>
+                                          <th scope="col" class="text-center">Fecha de Inicio</th>
+                                          <th scope="col" class="text-center">Fecha de Término</th>
+                                          <th scope="col" class="text-center">Acciones</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td scope="row"> <img src="assets/img/pexels-simon-migaj-747964.jpg" alt="" width="75" height="75"></td>
+                                          <td class="text-center">Nombre</td>
+                                          <td class="text-center">Lugar a visitar</td>
+                                          <td class="text-center">Tipo de actividad</td>
+                                          <td class="text-center">Fecha de Inicio</td>
+                                          <td class="text-center">Fecha de Término</td>
+                                          <td class="text-center">
+                                             <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
+                                             <a class="btn btn-danger btn-sm" href="/usuario/eliminar/">Eliminar</a>
+                                          </td>
+                                       </tr>
+                                       <p>
+                                       <div class="collapse hiddenRow" id="collapseExample">
+                                          <div class="">
+                                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                                           </div>
                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Nombre</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                        <h5>John</h5>
-                                    </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Apellido</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                        <h5>Snow</h5>
-                                    </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Nombre usuario</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                        <h5>JohnStark</h5>
-                                    </div>
-                                 </div>
-                                 <div class="form-group row">
-                                    <div class="col-xl-3 col-lg-3 col-form-label">
-                                        <h4>Correo</h4>
-                                    </div>
-                                    <div class="col-lg-9 col-xl-6 col-form-label">
-                                        <h5>john.stark@gmail.com</h5>
-                                    </div>
-                                 </div>
+                                       <tr>
+                                          <td scope="row"> <img src="assets/img/pexels-simon-migaj-747964.jpg" alt="" width="75" height="75"></td>
+                                          <td class="text-center">Nombre</td>
+                                          <td class="text-center">Lugar a visitar</td>
+                                          <td class="text-center">Tipo de actividad</td>
+                                          <td class="text-center">Fecha de Inicio</td>
+                                          <td class="text-center">Fecha de Término</td>
+                                          <td class="text-center">
+                                             <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
+                                             <a class="btn btn-danger btn-sm" href="/usuario/eliminar/">Eliminar</a>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
                               </div>
-                           <!--end::Form-->
-                           
+                           </div>
                         </div>
+                  
                </div>
             </div>
          </section>
@@ -176,7 +160,7 @@
       <footer id="footer">
          <div class="container">
             <div class="social-links">
-               <a href="https://www.facebook.com/Club-Deportivo-Equinoccio-1915192972122214" class="twitter"><i class="fa fa-facebook"></i></a>
+               <a href="https://www.facebook.com/Club-Deportivo-Equinoccio-1915192972122214" class="twitter" target="_blank"><i class="fa fa-facebook"></i></a>
                <a href="#" class="facebook"><i class="fa fa-twitter"></i></a>
                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
             </div>
