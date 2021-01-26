@@ -45,7 +45,6 @@ public class Usuario implements Serializable {
     @Column(nullable=true)
     private String foto_perfil;
     
-    
     public Usuario() {
     }
 

@@ -7,7 +7,11 @@ package com.club.equinoccio.controladores;
 
 import com.club.equinoccio.entidades.Rol;
 import com.club.equinoccio.entidades.Usuario;
+import com.club.equinoccio.repositorios.UsuarioRepositorio;
 import com.club.equinoccio.servicios.UsuarioServicio;
+import javax.servlet.http.HttpSession;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,20 +33,31 @@ public class UsuarioControlador {
     
     //Controlador para listar los usuarios
     @GetMapping("/perfil")
-    public ModelAndView listar_usuarios() {
+    public ModelAndView perfil(Usuario usuario) throws Exception {
+    
+        
+//        String username = auth.getName();
+//        if(session.getAttribute("usuario") == null){
+//            Usuario usuario = usuarioServicio.buscarPorUsername(username);
+//            usuario.setPassword(null);
+//            System.out.println("usuario: "+ usuario.getUsername());
+//            session.setAttribute("usuario", usuario);
+//            
+//        }
         ModelAndView mv = new ModelAndView("panel_perfil");
+        usuario = usuarioServicio.buscar(usuario.getId());
+        mv.addObject("usuario", usuario);
         mv.addObject("usuarios", usuarioServicio.buscarTodos());
         return mv;
+        
+        
     }
     
     // Controlador para editar un usuario
-    @GetMapping("/users/edit/{id}")
-    public ModelAndView editar(Usuario usuario) throws Exception {
-        
-        ModelAndView mv = new ModelAndView("form-register");
-        usuario = usuarioServicio.buscar(usuario.getId());
-        mv.addObject("usuario", usuario);
-        return mv;
+    @PostMapping("/perfil/save")
+    public RedirectView actualizarUsuario(Usuario usuario) throws Exception{
+        usuarioServicio.guardar(usuario);
+        return new RedirectView("/perfil",true);
          
     }
     

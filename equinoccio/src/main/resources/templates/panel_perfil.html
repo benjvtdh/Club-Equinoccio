@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,7 +115,8 @@
                            </div>
                            <!--end::Header-->
                            <!--begin::Form-->
-                           <form class="form">
+                           <form th:action="@{/perfil/save" method="post"class="form" th:object="${usuario}">
+                               <input type="hidden" th:field="*{id}"/>
                               <!--begin::Body-->
                               <div class="card-body">
                                  <div class="row">
@@ -140,19 +142,19 @@
                                  <div class="form-group row">
                                     <label class="col-xl-3 col-lg-3 col-form-label">Nombre</label>
                                     <div class="col-lg-9 col-xl-6">
-                                       <input class="form-control form-control-lg form-control-solid" type="text" value="Jon">
+                                       <input class="form-control form-control-lg form-control-solid" type="text" th:field="*{nombres}">
                                     </div>
                                  </div>
                                  <div class="form-group row">
                                     <label class="col-xl-3 col-lg-3 col-form-label">Apellido</label>
                                     <div class="col-lg-9 col-xl-6">
-                                       <input class="form-control form-control-lg form-control-solid" type="text" value="Snow">
+                                       <input class="form-control form-control-lg form-control-solid" type="text" th:field="*{apellidos}">
                                     </div>
                                  </div>
                                  <div class="form-group row">
                                     <label class="col-xl-3 col-lg-3 col-form-label">Nombre usuario</label>
                                     <div class="col-lg-9 col-xl-6">
-                                       <input class="form-control form-control-lg form-control-solid" type="text" value="JonStark">
+                                       <input class="form-control form-control-lg form-control-solid" type="text" th:field="*{username}">
                                     </div>
                                  </div>
                                  <div class="form-group row">
@@ -164,7 +166,7 @@
                                              <i class="fa fa-envelope-o"></i>
                                              </span>
                                           </div>
-                                          <input type="text" class="form-control form-control-lg form-control-solid" value="jon.stark@gmail.com" placeholder="Correo">
+                                          <input type="text" class="form-control form-control-lg form-control-solid" th:field="*{correo}" placeholder="Correo">
                                        </div>
                                     </div>
                                  </div>
