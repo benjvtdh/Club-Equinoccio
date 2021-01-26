@@ -52,7 +52,7 @@
                    
                    <!-- Si el usuario no esta logeado, aparece esto-->
                   <div sec:authorize="isAnonymous()">
-                      <a class="btn btn-sm btn-outline-secondary" th:href="@{/login}">Ingresa</a>
+                      <a class="btn btn-sm btn-outline-secondary" th:href="@{/index}">Ingresa</a>
                   </div>
                   
                   <!-- Si esta logeado, se muestra esto-->
@@ -65,7 +65,7 @@
                                       <img class="avatar avatar-sm rounded-circle" alt="Imagen Usuario" src="assets/img/perfil/usuario-1.jpg">
 
                                           <div class="media-body  ml-2  d-none d-lg-block">
-                                              <span class="mb-0 text-sm">John Snow</span>
+                                              <span sec:authentication="name" class="mb-0 text-sm"></span>
                                           </div>
                                   </div>
                               </a>
@@ -96,6 +96,9 @@
             </nav>
          </div>
       </header>
+       <h1 th:if="${usuario}">
+           <p th:text="${'Se ha registrado satisfactoriamente tu usuario'}">
+       </h1>
       <section id="hero">
          <div class="hero-container">
             <img src="assets/img/icono_preview_rev_1.png" alt="logo" width="250" height="250">

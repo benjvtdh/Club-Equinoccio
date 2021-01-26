@@ -25,14 +25,17 @@ public class UsuarioControlador {
     public UsuarioControlador(UsuarioServicio usuarioServicio) {
         this.usuarioServicio = usuarioServicio;
     }
-
+    
+    
+    //Controlador para listar los usuarios
     @GetMapping("/users")
     public ModelAndView listar_usuarios() {
         ModelAndView mv = new ModelAndView("lista-users");
         mv.addObject("usuarios", usuarioServicio.buscarTodos());
         return mv;
     }
-
+    
+    // Controlador para editar un usuario
     @GetMapping("/users/edit/{id}")
     public ModelAndView editar(Usuario usuario) throws Exception {
         
