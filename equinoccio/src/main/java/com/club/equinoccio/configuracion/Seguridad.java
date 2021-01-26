@@ -35,7 +35,7 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
                 .antMatchers("/assets/**").permitAll()
                 .antMatchers("/","/register/**","/perfil").permitAll()
                 //Vistas por roles
-                .antMatchers("/users/**","/salida/**").hasAnyAuthority("Administrador","Supervisor")
+                .antMatchers("/salida/**","/perfil/**").hasAnyAuthority("Administrador","Supervisor")
                 .anyRequest().authenticated()
                 .and()
                 //Vista login

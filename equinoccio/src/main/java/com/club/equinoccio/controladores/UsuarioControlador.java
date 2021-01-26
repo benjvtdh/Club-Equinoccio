@@ -10,6 +10,7 @@ import com.club.equinoccio.entidades.Usuario;
 import com.club.equinoccio.repositorios.UsuarioRepositorio;
 import com.club.equinoccio.servicios.UsuarioServicio;
 import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -21,9 +22,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-
 public class UsuarioControlador {
-
+    
+    @Autowired
     private final UsuarioServicio usuarioServicio;
 
     public UsuarioControlador(UsuarioServicio usuarioServicio) {
@@ -33,33 +34,40 @@ public class UsuarioControlador {
     
     //Controlador para listar los usuarios
     @GetMapping("/perfil")
-    public ModelAndView perfil(Usuario usuario) throws Exception {
+    public ModelAndView perfil(Authentication auth, HttpSession session) throws Exception {
     
         
-//        String username = auth.getName();
+        String username = auth.getName();
 //        if(session.getAttribute("usuario") == null){
-//            Usuario usuario = usuarioServicio.buscarPorUsername(username);
-//            usuario.setPassword(null);
-//            System.out.println("usuario: "+ usuario.getUsername());
-//            session.setAttribute("usuario", usuario);
-//            
-//        }
+        Usuario usuario = usuarioServicio.buscarPorUsername(username);
+        usuario.setPassword(null);
+        System.out.println("usuario: "+ usuario.getUsername());
         ModelAndView mv = new ModelAndView("panel_perfil");
-        usuario = usuarioServicio.buscar(usuario.getId());
-        mv.addObject("usuario", usuario);
-        mv.addObject("usuarios", usuarioServicio.buscarTodos());
+        mv.addObject("usuario",usuario);
+        
+            
+//        }
+        
+        
         return mv;
         
         
     }
     
-    // Controlador para editar un usuario
-    @PostMapping("/perfil/save")
-    public RedirectView actualizarUsuario(Usuario usuario) throws Exception{
-        usuarioServicio.guardar(usuario);
-        return new RedirectView("/perfil",true);
-         
+    @GetMapping("/perfil/list-users")
+    public ModelAndView listar_usuarios(){
+        ModelAndView mv = new ModelAndView("list-users");
+        mv.addObject("usuarios", usuarioServicio.buscarTodos());
+        return mv;
     }
+    
+//     Controlador para editar un usuario
+//    @PostMapping("/perfil/save")
+//    public RedirectView actualizarUsuario(Usuario usuario) throws Exception{
+//        usuarioServicio.guardar(usuario);
+//        return new RedirectView("/perfil",true);
+//         
+//    }
     
     // TODO ESTO QUEDA EN REPOSO
     
