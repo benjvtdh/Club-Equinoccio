@@ -46,23 +46,33 @@ public class RegistrerControlador {
         Rol rol = new Rol();
         rol.setPerfilId(3);
         usuario.agregar(rol);
-//        usuarioServicio.guardar(usuario);
-        reAttr.addFlashAttribute("usuario",usuario);
-        return new RedirectView("/register/sucess",true);
+        usuarioServicio.guardar(usuario);
+        return new RedirectView("/",true);
+        
+        
+        
+        // Ignoren esta parte
+        
+//        reAttr.addFlashAttribute("usuario",usuario);
+//        return new RedirectView("/register/sucess",true);
     }
     
-    @GetMapping("/register/sucess")
-    public String getSucess(HttpServletRequest request){
-
-        Map<String, ? > inputFlashMap = RequestContextUtils.getInputFlashMap(request);
-        if(inputFlashMap != null){
-            Usuario usuario = (Usuario) inputFlashMap.get("usuario");
-            return "index";
-        }
-        
-        else{
-            return "redirect:/register";
-        }
-                
-    }
+//    @GetMapping("/register/sucess")
+//    public RedirectView getSucess(HttpServletRequest request, RedirectAttributes ra){
+//        Map<String, ? > inputFlashMap = RequestContextUtils.getInputFlashMap(request);
+//        if(inputFlashMap != null){
+//            Usuario usuario = (Usuario) inputFlashMap.get("usuario");
+//            usuarioServicio.guardar(usuario);
+//            
+//            RedirectView rv =  new RedirectView("/",true);
+//            ra.addFlashAttribute("msg", "El usuario fue registrado satisfactoriamente");
+//            return rv;
+//            
+//        }
+//        
+//        else{
+//            return new RedirectView("/register",true);
+//        }
+//                
+//    }
 }

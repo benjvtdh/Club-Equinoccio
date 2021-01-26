@@ -7,6 +7,7 @@ package com.club.equinoccio.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -32,6 +33,7 @@ public class Salida implements Serializable {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idSalida;
+    private String descripcion;
     //Relacion one to many con la clase persona y con fetch eager, para cargar todas las personas
     @OneToMany(mappedBy = "salida",fetch = FetchType.EAGER)
     private List<Persona> personas;
@@ -49,14 +51,22 @@ public class Salida implements Serializable {
     public Salida() {
     }
 
-    public Salida(String idSalida, List<Persona> personas, String lugar_visitar, String ruta_actividad, String tipo_actividad, Date fecha_inicio, Date fecha_termino) {
+    public Salida(String idSalida, String descripcion, List<Persona> personas, String lugar_visitar, String ruta_actividad, String tipo_actividad, Date fecha_inicio, Date fecha_termino) {
         this.idSalida = idSalida;
+        this.descripcion = descripcion;
         this.personas = personas;
         this.lugar_visitar = lugar_visitar;
         this.ruta_actividad = ruta_actividad;
         this.tipo_actividad = tipo_actividad;
         this.fecha_inicio = fecha_inicio;
         this.fecha_termino = fecha_termino;
+    }
+
+     public void agregar_persona(Persona persona){
+        if(personas==null){
+            personas = new LinkedList<Persona>();
+        }
+        personas.add(persona);
     }
 
     public String getIdSalida() {
