@@ -6,6 +6,7 @@ import com.club.equinoccio.servicios.SalidaServicio;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
@@ -26,7 +27,12 @@ public class SalidaControlador {
         mv.addObject("salidas", salidaServicio.buscarTodos());
         return mv;
     }
-
+    
+    @PostMapping("/salida/save")
+    public RedirectView guardar_salida(Salida salida) throws Exception{
+        salidaServicio.guardar(salida);
+        return new RedirectView("list_salidas");
+    }
     @GetMapping("/salida/form/{id}")
     public ModelAndView editar (Salida salida) throws Exception {
         ModelAndView mv = new ModelAndView("form-salidas");
