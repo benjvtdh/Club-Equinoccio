@@ -21,11 +21,6 @@ body{
     font-size: 18px!important;
 }
 
-.btn-outline-secondary {
-    color: #ffffff;
-    border-color: #ffffff;
-}
-
 .text-muted {
     color: #d1d1d1 !important;
 }
@@ -883,7 +878,7 @@ section {
 
 .card-toolbar{
     
-    margin: 0 auto;
+    text-align: right;
     padding-bottom: 15px;
 }
 
