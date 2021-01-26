@@ -40,7 +40,8 @@ public class Usuario implements Serializable {
     @JoinTable(name="usuario_rol", 
             joinColumns = @JoinColumn(name = "usuario_id" ),
             inverseJoinColumns = @JoinColumn(name="rol_id"))
-    private List<Rol> roles;    
+    private List<Rol> roles; 
+    
     public Usuario() {
     }
 
