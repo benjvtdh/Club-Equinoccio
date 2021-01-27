@@ -21,11 +21,6 @@ body{
     font-size: 18px!important;
 }
 
-.btn-outline-secondary {
-    color: #ffffff;
-    border-color: #ffffff;
-}
-
 .text-muted {
     color: #d1d1d1 !important;
 }
@@ -224,6 +219,11 @@ section {
   padding-bottom: 30px;
 }
 
+.section-title-2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
@@ -406,18 +406,21 @@ section {
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Testimonials
---------------------------------------------------------------*/
+
 .testimonials .testimonial-item {
   box-sizing: content-box;
-  padding: 30px 30px 0 30px;
+  padding: 0;
   margin: 30px 15px;
   text-align: center;
   min-height: 350px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   background: #fff;
 }
+
+.testimonials .testimonial-item .testimonial-conten {
+    padding: 36px ;
+}
+
 
 .testimonials .testimonial-item .testimonial-img {
   width: 100%;
@@ -483,6 +486,22 @@ section {
   .testimonials {
     margin: 30px 10px;
   }
+}
+
+.margin-leftright-null {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.meta {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding-bottom: 18px;
+}
+
+.category {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /*--------------------------------------------------------------
@@ -883,7 +902,7 @@ section {
 
 .card-toolbar{
     
-    margin: 0 auto;
+    text-align: right;
     padding-bottom: 15px;
 }
 
