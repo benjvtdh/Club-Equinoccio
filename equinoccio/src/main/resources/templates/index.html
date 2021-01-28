@@ -138,7 +138,7 @@
          <div class="testimonials">
                <div class="owl-carousel testimonials-carousel">
                   <div th:each="salida : ${salidas}" class="testimonial-item">
-                     <img src="/assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
+                     <img th:src="@{/img/img-salidas/}+${salida.foto}" alt="" class="testimonial-img rounded">
                      <div class="testimonial-conten">
     
                          
