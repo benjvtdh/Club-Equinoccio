@@ -33,6 +33,7 @@ public class Salida implements Serializable {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idSalida;
+    private String nombre_salida;
     private String descripcion;
     private String foto;
     //Relacion one to many con la clase persona y con fetch eager, para cargar todas las personas
@@ -52,8 +53,9 @@ public class Salida implements Serializable {
     public Salida() {
     }
 
-    public Salida(String idSalida, String descripcion, String foto, List<Persona> personas, String lugar_visitar, String ruta_actividad, String tipo_actividad, Date fecha_inicio, Date fecha_termino) {
+    public Salida(String idSalida, String nombre_salida, String descripcion, String foto, List<Persona> personas, String lugar_visitar, String ruta_actividad, String tipo_actividad, Date fecha_inicio, Date fecha_termino) {
         this.idSalida = idSalida;
+        this.nombre_salida = nombre_salida;
         this.descripcion = descripcion;
         this.foto = foto;
         this.personas = personas;
@@ -80,6 +82,15 @@ public class Salida implements Serializable {
     public void setIdSalida(String idSalida) {
         this.idSalida = idSalida;
     }
+
+    public String getNombre_salida() {
+        return nombre_salida;
+    }
+
+    public void setNombre_salida(String nombre_salida) {
+        this.nombre_salida = nombre_salida;
+    }
+    
 
     public List<Persona> getPersonas() {
         return personas;

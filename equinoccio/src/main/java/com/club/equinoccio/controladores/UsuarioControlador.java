@@ -54,7 +54,7 @@ public class UsuarioControlador {
         
     }
     
-    @GetMapping("/perfil/list-users")
+    @GetMapping("/perfil/lista-usuarios")
     public ModelAndView listar_usuarios(){
         ModelAndView mv = new ModelAndView("list-users");
         mv.addObject("usuarios", usuarioServicio.buscarTodos());

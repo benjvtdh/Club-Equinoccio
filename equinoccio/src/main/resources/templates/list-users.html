@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Equinoccio - Club deportivo</title>
+      <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+      <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+      <link href="/assets/vendor/venobox/venobox.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="shortcut icon" href="/assets/img/icono.png" type="img/x-icon">
+      <link rel="stylesheet" href="/assets/css/style.css">
+   </head>
+   <body>
+      <header id="header" class="fixed-top header-transparent">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
+               <div id="logo">
+                  <a class="" href="index.html">
+                  <img src="/assets/img/icono_preview_rev_1.png" width="85" height="85" class="normal" >
+                  </a>
+               </div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#header">Inicio</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#about">Nosotros</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#salida">Salidas</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#portfolio">Galeria</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#contacto">Contacto</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Únete</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="d-flex justify-content-end align-items-center">
+                  <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <div class="media align-items-center">
+                              <img class="avatar avatar-sm rounded-circle" alt="Imagen Usuario" src="/assets/img/perfil/usuario-1.jpg">
+                              <div class="media-body  ml-2  d-none d-lg-block">
+                                 <span class="mb-0 text-sm">John Snow</span>
+                              </div>
+                           </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                           <a href="#!" class="dropdown-item">
+                           <i class="fa fa-user"></i>
+                           <span>Mi perfil</span>
+                           </a>
+                           <a href="#!" class="dropdown-item">
+                           <i class="fa fa-cog"></i>
+                           <span>Configuracion</span>
+                           </a>
+                           <a href="#!" class="dropdown-item">
+                           <i class="fa fa-calendar"></i>
+                           <span>Salidas</span>
+                           </a>
+                           <div class="dropdown-divider"></div>
+                           <a href="#!" class="dropdown-item">
+                           <i class="fa fa-sign-out"></i>
+                           <span>Cerrar sesión</span>
+                           </a>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <main id="main">
+         <section id="perfil">
+            <div class="container perfil">
+               <h2>Perfil </h2>
+               <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>
+               <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="panel_perfil.html">Perfil</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="panel_perfil_salidas.html">Salidas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link  active" href="panel_perfil_usuarios.html">Usuarios</a>
+  </li>
+</ul>
+               <!-- Tab panes -->
+               <div class="content">
+                        <div class="card card-custom card-stretch">
+                           <div class="card-header py-3">
+                              <div class="card-title align-items-start flex-column">
+                                 <h3 class="card-label font-weight-bolder text-dark">Usuarios registrados</h3>
+                                 <span class="text-muted font-weight-bold font-size-sm mt-1">Informacion de usuarios</span>
+                              </div>
+                           </div>
+                           <div class="card-body">
+                                 <table class="table">
+                                    <thead class="thead-dark">
+                                       <tr>
+                                          <th class="text-center" scope="col">Nombre</th>
+                                         <th class="text-center" scope="col">Apellido</th>
+                                         <th class="text-center" scope="col">Nombre de Usuario</th>
+                                         <th class="text-center" scope="col">Acciones</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr th:each="usuarioOtro : ${usuarios}" >
+                                         <td th:text="${usuarioOtro.nombres}" class="text-center" scope="row">Nombre</td>
+                                         <td th:text="${usuarioOtro.apellidos}" class="text-center">apellido</td>
+                                         <td th:text="${usuarioOtro.username}" class="text-center">nombre de usuario</td>
+                                         <td class="text-center">
+                                             <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
+                                             <a class="btn btn-danger btn-sm" href="/usuario/eliminar/">Eliminar</a>
+                                         </td>
+                                      
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                  
+                           </div>
+                        </div>
+               </div>
+            </div>
+         </section>
+         <!-- End Contact Section -->
+      </main>
+      <footer id="footer">
+         <div class="container">
+            <div class="social-links">
+               <a href="https://www.facebook.com/Club-Deportivo-Equinoccio-1915192972122214" class="twitter"><i class="fa fa-facebook"></i></a>
+               <a href="#" class="facebook"><i class="fa fa-twitter"></i></a>
+               <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            </div>
+            <div class="copyright">
+               © <strong><span>Equinoccio - Club deportivo</span></strong>. Todos los derechos reservados.
+            </div>
+         </div>
+      </footer>
+      <script src="/assets/vendor/jquery/jquery.min.js"></script>
+      <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+      <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="/assets/vendor/counterup/counterup.min.js"></script>
+      <script src="/assets/vendor/venobox/venobox.min.js"></script>
+      <script src="/assets/js/main.js"></script>
+   </body>
+</html>
