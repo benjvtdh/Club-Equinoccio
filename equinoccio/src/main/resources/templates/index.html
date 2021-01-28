@@ -2,17 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://thymeleaf.org">
    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Equinoccio - Club deportivo</title>
-      <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-      <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-      <link href="/assets/vendor/venobox/venobox.css" rel="stylesheet">
+      <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+      <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+      <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+      <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="shortcut icon" href="/assets/img/icono.png" type="img/x-icon">
-      <link rel="stylesheet" href="/assets/css/style.css">
+      <link rel="shortcut icon" href="assets/img/icono.png" type="img/x-icon">
+      <link rel="stylesheet" href="assets/css/style.css">
    </head>
    <body>
       <header id="header" class="fixed-top header-transparent">
@@ -20,7 +21,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
                <div id="logo">
                   <a class="" href="index.html">
-                  <img src="/assets/img/icono_preview_rev_1.png" width="85" height="85" class="normal" >
+                  <img src="assets/img/icono_preview_rev_1.png" width="85" height="85" class="normal" >
                   </a>
                </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +45,7 @@
                         <a class="nav-link scrollto" href="#contacto">Contacto</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" th:href="@{/registrarse}">Únete</a>
+                        <a class="nav-link" href="#">Únete</a>
                      </li>
                   </ul>
                </div>
@@ -96,10 +97,9 @@
             </nav>
          </div>
       </header>
-      
       <section id="hero">
          <div class="hero-container">
-            <img src="/assets/img/icono_preview_rev_1.png" alt="logo" width="250" height="250">
+            <img src="assets/img/icono_preview_rev_1.png" alt="logo" width="250" height="250">
             <h1>Bienvenidos</h1>
             <a href="#about" class="btn-get-started scrollto"><i class="fa fa-angle-double-down"></i></a>
          </div>
@@ -118,7 +118,7 @@
                      <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
                            <div class="col-md-12 icon-box" >
-                              <img src="/assets/img/nosotros.jpg" class="img-fluid" alt="Nosotros">
+                              <img src="assets/img/nosotros.jpg" class="img-fluid" alt="Nosotros">
                            </div>
                         </div>
                      </div>
@@ -128,9 +128,210 @@
             </div>
          </section>
          <div class="container separador"></div>
-         <!-- ======= Services Section ======= -->
-         
-         <!-- End Services Section -->
+         <!-- ======= Salidas Section ======= -->
+         <section id="salida" class="salida">
+            <div class="container">
+               <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+                  <h2>Salidas</h2>
+               </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. El sabio error rechaza este dolor, el placer de volar</p>
+         <div class="testimonials">
+            
+               <div class="owl-carousel testimonials-carousel">
+                  <div class="testimonial-item">
+                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
+                     <div class="testimonial-conten">
+    
+                         
+                             
+                             <div class="info">
+                                 <div class="col-md-12">
+                                    <h3>Nombre salida</h3>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
+                              </div>
+                             
+                              <div class="row meta">
+                                 <div class="col-md-4">
+                                    <h3>Nombre</h3>
+                                    <h4>Lugar</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>05/03</h3>
+                                    <h4>Fecha inicio</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>15/03</h3>
+                                    <h4>Fecha termino</h4>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                <h3>Escalada</h3>
+                                    <h4>Tipo de Actividad</h4>
+                              </div>
+                              
+                          
+                        <a href="single-salida.html" class="link"></a>                   
+                     </div>
+                  </div>
+                  <div class="testimonial-item">
+                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
+                     <div class="testimonial-conten">
+    
+                         
+                             
+                             <div class="info">
+                                 <div class="col-md-12">
+                                    <h3>Nombre salida</h3>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
+                              </div>
+                             
+                              <div class="row meta">
+                                 <div class="col-md-4">
+                                    <h3>Nombre</h3>
+                                    <h4>Lugar</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>05/03</h3>
+                                    <h4>Fecha inicio</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>15/03</h3>
+                                    <h4>Fecha termino</h4>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                <h3>Escalada</h3>
+                                    <h4>Tipo de Actividad</h4>
+                              </div>
+                              
+                          
+                        <a href="single-salida.html" class="link"></a>                   
+                     </div>
+                  </div>
+                  <div class="testimonial-item">
+                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
+                     <div class="testimonial-conten">
+    
+                         
+                             
+                             <div class="info">
+                                 <div class="col-md-12">
+                                    <h3>Nombre salida</h3>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
+                              </div>
+                             
+                              <div class="row meta">
+                                 <div class="col-md-4">
+                                    <h3>Nombre</h3>
+                                    <h4>Lugar</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>05/03</h3>
+                                    <h4>Fecha inicio</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>15/03</h3>
+                                    <h4>Fecha termino</h4>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                <h3>Escalada</h3>
+                                    <h4>Tipo de Actividad</h4>
+                              </div>
+                              
+                          
+                        <a href="single-salida.html" class="link"></a>                   
+                     </div>
+                  </div>
+                  <div class="testimonial-item">
+                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
+                     <div class="testimonial-conten">
+    
+                         
+                             
+                             <div class="info">
+                                 <div class="col-md-12">
+                                    <h3>Nombre salida</h3>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
+                              </div>
+                             
+                              <div class="row meta">
+                                 <div class="col-md-4">
+                                    <h3>Nombre</h3>
+                                    <h4>Lugar</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>05/03</h3>
+                                    <h4>Fecha inicio</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>15/03</h3>
+                                    <h4>Fecha termino</h4>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                <h3>Escalada</h3>
+                                    <h4>Tipo de Actividad</h4>
+                              </div>
+                              
+                          
+                        <a href="single-salida.html" class="link"></a>                   
+                     </div>
+                  </div>
+                  <div class="testimonial-item">
+                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
+                     <div class="testimonial-conten">
+    
+                         
+                             
+                             <div class="info">
+                                 <div class="col-md-12">
+                                    <h3>Nombre salida</h3>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
+                              </div>
+                             
+                              <div class="row meta">
+                                 <div class="col-md-4">
+                                    <h3>Nombre</h3>
+                                    <h4>Lugar</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>05/03</h3>
+                                    <h4>Fecha inicio</h4>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <h3>15/03</h3>
+                                    <h4>Fecha termino</h4>
+                                 </div>
+                              </div>
+                              <div class="category">
+                                <h3>Escalada</h3>
+                                    <h4>Tipo de Actividad</h4>
+                              </div>
+                              
+                          
+                        <a href="single-salida.html" class="link"></a>                   
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+          </section>
          <div class="container separador"></div>
          <!-- ======= Portfolio Section ======= -->
          <section id="portfolio" class="portfolio">
@@ -142,73 +343,73 @@
                <div class="row portfolio-container" data-aos="fade-up">
                   <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                      <div class="portfolio-wrap">
-                        <img src="/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
                         <div class="portfolio-links">
-                           <a href="/assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="fa fa-search-plus"></i></a>
+                           <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="fa fa-search-plus"></i></a>
                         </div>
                      </div>
                   </div>
@@ -295,12 +496,13 @@
             </div>
          </div>
       </footer>
-      <script src="/assets/vendor/jquery/jquery.min.js"></script>
-      <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-      <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-      <script src="/assets/vendor/counterup/counterup.min.js"></script>
-      <script src="/assets/vendor/venobox/venobox.min.js"></script>
-      <script src="/assets/js/main.js"></script>
+      <script src="assets/vendor/jquery/jquery.min.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="assets/vendor/counterup/counterup.min.js"></script>
+      <script src="assets/vendor/venobox/venobox.min.js"></script>
+      <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+      <script src="assets/js/main.js"></script>
    </body>
 </html>
