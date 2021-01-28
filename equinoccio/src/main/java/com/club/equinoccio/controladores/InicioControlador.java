@@ -33,7 +33,7 @@ public class InicioControlador {
     
     @GetMapping("/")
     public ModelAndView inicio(){
-        ModelAndView mv = new ModelAndView("index");
+        ModelAndView mv = new ModelAndView("index_final");
         mv.addObject("salidas", salidaServicio.buscarTodos());
         return mv;
     }
