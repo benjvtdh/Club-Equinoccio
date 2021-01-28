@@ -45,8 +45,13 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 //Vista login
-                .formLogin().loginPage("/login").permitAll();
+                .formLogin().loginPage("/login").permitAll()
+                .and()
+                .logout()
+                .logoutUrl("/logout")  
+                .logoutSuccessUrl("/");  
                 http.csrf().disable();
+                
                 
     }
 }
