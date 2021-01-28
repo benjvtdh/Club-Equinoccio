@@ -64,7 +64,7 @@
             <br>
             <br>
         <div class="container-fluid d-flex justify-content-center">
-            <form th:action="@{/salidas/inscribirse}" method="post" class="p-3" style="width: 45%" th:object="${persona}" >
+            <form th:action="@{/salidas/inscribirse/save/{id}(id=${salida.idSalida})}" method="post" class="p-3" style="width: 45%" th:object="${persona}" >
               <h3 class="font-weight-bold text-center">Formulario de Inscripción </h3>
             <br>
             <br>

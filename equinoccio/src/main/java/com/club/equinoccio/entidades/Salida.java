@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -37,7 +38,10 @@ public class Salida implements Serializable {
     private String descripcion;
     private String foto;
     //Relacion one to many con la clase persona y con fetch eager, para cargar todas las personas
-    @OneToMany(mappedBy = "salida",fetch = FetchType.EAGER)
+    @OneToMany(
+            mappedBy = "salida",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
     private List<Persona> personas;
     private String lugar_visitar;
     private String ruta_actividad;

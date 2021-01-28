@@ -9,8 +9,10 @@ import com.club.equinoccio.utileria.Utileria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -24,23 +26,20 @@ import org.springframework.web.servlet.view.RedirectView;
 public class SalidaControlador {
     @Autowired
     private final SalidaServicio salidaServicio;
-    
-    @Autowired
-    private final PersonaServicio personaServicio;
 
-    public SalidaControlador(SalidaServicio salidaServicio, PersonaServicio personaServicio) {
+    public SalidaControlador(SalidaServicio salidaServicio) {
         this.salidaServicio = salidaServicio;
-        this.personaServicio = personaServicio;
     }
     
-    
-
+    //Listar salidas 
     @GetMapping("/salidas")
     public ModelAndView listar_salidas(){
         ModelAndView mv= new ModelAndView ("list-salidas");
         mv.addObject("salidas", salidaServicio.buscarTodos());
         return mv;
     }
+    
+    // Crear una salida
     @GetMapping("/salidas/crear")
     public ModelAndView crear_salida(){
         Salida salida = new Salida();
@@ -48,7 +47,8 @@ public class SalidaControlador {
         mv.addObject("salida", salida);
         System.out.println("Se creo una salida");
         return mv;
-    }
+        
+    }// Guardar una salida
     @PostMapping("/salidas/save")
     public String guardar_salida(
             Salida salida , 
@@ -76,12 +76,8 @@ public class SalidaControlador {
         salidaServicio.guardar(salida);
         return "redirect:/salidas";
     }
-    @GetMapping("/salida/form/{id}")
-    public ModelAndView editar (Salida salida) throws Exception {
-        ModelAndView mv = new ModelAndView("form-salidas");
-        mv.addObject("salida", salida);
-        return mv;
-    }
+    // Ver una salida
+    
     @GetMapping("/salidas/{idSalida}")
     public ModelAndView ver_salida(Salida salida) throws Exception {
         ModelAndView mv = new ModelAndView("single-salida");
@@ -89,11 +85,11 @@ public class SalidaControlador {
         mv.addObject("salida", salida);
         return mv;
         
-    }
+    } // Crear una persona para una salida
     @GetMapping("/salidas/inscribirse/{idSalida}")
-    public ModelAndView crear_persona(Salida salida) throws Exception{
+    public ModelAndView crear_persona(Salida salida, @PathVariable String idSalida) throws Exception{
         Persona persona = new Persona();
-        salida = salidaServicio.buscar(salida.getIdSalida());
+        salida = salidaServicio.buscar(idSalida);
         ModelAndView mv = new ModelAndView("form-personas");
         mv.addObject("salida", salida);
         mv.addObject("persona", persona);
@@ -101,9 +97,10 @@ public class SalidaControlador {
         
         
     }
-    @PostMapping("/salidas/inscribirse/save")
-    public String guardar_persona(Salida salida, Persona persona) throws Exception{
-        personaServicio.guardar(persona);
+    // Guadar una persona en la lista de personas de la salida (ACTUALIZAR SALIDA)
+    @PostMapping("/salidas/inscribirse/save/{idSalida}")
+    public String guardar_persona(Persona persona, @PathVariable String idSalida ) throws Exception{
+        Salida salida = salidaServicio.buscar(idSalida);
         salida.agregar_persona(persona);
         salidaServicio.guardar(salida);
         return "redirect:/salidas";
