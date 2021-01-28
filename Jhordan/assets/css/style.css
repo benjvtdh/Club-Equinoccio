@@ -22,7 +22,7 @@ body{
 }
 
 .text-muted {
-    color: #d1d1d1 !important;
+    color: #acacac !important;
 }
 
 .btn-outline-secondary:hover {
@@ -1059,4 +1059,86 @@ section {
     line-height: 36px;
     margin-bottom: -70px;
   }
+}
+
+/*--------------------------------------------------------------
+# FORMULARIOS
+--------------------------------------------------------------*/
+.bg-form{
+    background-color: #d8dde4;
+}
+
+
+.salida-form{
+    margin-top: 90px!important;
+    width: 50%;
+    margin: 0 auto ;
+}
+
+.borde{
+    
+    background-color: #fff;
+background-clip: border-box;
+border: 1px solid rgba(0,0,0,.125);
+border-radius: .25rem;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #183b63;
+    border-color: #183b63;
+}
+
+.form-signin .not {
+    text-align: left;
+    padding-top: 15px;
+}
+@media (max-width: 768px) {
+    
+    .salida-form{
+    margin-top: 70px!important;
+    width: 100%;
+}
+    
+}
+
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
 }
