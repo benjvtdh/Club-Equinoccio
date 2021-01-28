@@ -67,6 +67,14 @@ public class SalidaControlador {
         mv.addObject("salida", salida);
         return mv;
     }
+    @GetMapping("/salidas/{id}")
+    public ModelAndView ver_salida(String id) throws Exception {
+        ModelAndView mv = new ModelAndView("single-salida");
+        Salida salida = salidaServicio.buscar(id);
+        mv.addObject("salida", salida);
+        return mv;
+        
+    }
 //    @GetMapping("/usuario/eliminar/{id} ")
     
 //    public ModelAndView eliminar (Salida salida){
