@@ -6,13 +6,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Equinoccio - Club deportivo</title>
-      <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-      <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-      <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+      <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+      <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+      <link href="/assets/vendor/venobox/venobox.css" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="shortcut icon" href="assets/img/icono.png" type="img/x-icon">
-      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" href="/assets/img/icono.png" type="img/x-icon">
+      <link rel="stylesheet" href="/assets/css/style.css">
    </head>
    <body>
       <header id="header" class="fixed-top header-transparent">
@@ -20,7 +20,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
                <div id="logo">
                   <a class="" href="index.html">
-                  <img src="assets/img/icono_preview_rev_1.png" width="85" height="85" class="normal" >
+                  <img src="/assets/img/icono_preview_rev_1.png" width="85" height="85" class="normal" >
                   </a>
                </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
                      <li class="nav-item dropdown">
                         <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            <div class="media align-items-center">
-                              <img class="avatar avatar-sm rounded-circle" alt="Imagen Usuario" src="assets/img/perfil/usuario-1.jpg">
+                              <img class="avatar avatar-sm rounded-circle" alt="Imagen Usuario" src="/assets/img/perfil/usuario-1.jpg">
                               <div class="media-body  ml-2  d-none d-lg-block">
                                  <span class="mb-0 text-sm">John Snow</span>
                               </div>
@@ -98,60 +98,41 @@
                         <div class="card card-custom card-stretch">
                            <div class="card-header py-3">
                               <div class="card-title align-items-start flex-column">
-                                 <h3 class="card-label font-weight-bolder text-dark">Salidas programadas</h3>
-                                 <span class="text-muted font-weight-bold font-size-sm mt-1">Informacion de salidas</span>
+                                 <h3 class="card-label font-weight-bolder text-dark">Participantes de la Salida</h3>
+                                 <span class="text-muted font-weight-bold font-size-sm mt-1">Editar participantes</span>
                               </div>
                            </div>
                            <div class="card-body">
-              
-                               <div th:if="${salidas.empty}">
-                                   <h2>
-                                       La lista de salidas esta vacía
-                                   </h2>
-                                   
-                               </div>
-                              <div th:if="${!salidas.empty}" class="table-responsive">
+                             <a class="btn btn-outline-secondary my-3" href="panel_perfil_salidas.html"><i class="fa fa-arrow-left"></i> Volver </a>
+                              <div class="table-responsive">
                                  <table class="table">
                                     <thead class="thead-dark">
                                        <tr>
-                                          <th scope="col" class="text-center">Imagen</th>
-                                          <th scope="col" class="text-center">Nombre Salida</th>
-                                          <th scope="col" class="text-center">Lugar a visitar</th>
-                                          <th scope="col" class="text-center">Tipo de actividad</th>
-                                          <th scope="col" class="text-center">Fecha de Inicio</th>
-                                          <th scope="col" class="text-center">Fecha de Término</th>
+                                          <th scope="col" class="text-center">Rut</th>
+                                          <th scope="col" class="text-center">Nombre</th>
+                                          <th scope="col" class="text-center">Apellido</th>
+                                          <th scope="col" class="text-center">Fecha de nacimiento</th>
+                                          <th scope="col" class="text-center">Telefono</th>
+                                          <th scope="col" class="text-center">Telefono de emergencia</th>
                                           <th scope="col" class="text-center">Acciones</th>
                                        </tr>
                                     </thead>
                                     <tbody>
-                                       <tr th:each="salida : ${salidas}" >
-                           
-                                          <td scope="row"> <img th:src="@{/img/img-salidas/}+${salida.foto}" alt="50" width="75" height="75"></td>
-                        
-                                          <td th:text="*{salida.nombre_salida}" class="text-center">Nombre</td>
-                                          <td th:text="*{salida.lugar_visitar}" class="text-center">Lugar a visitar</td>
-                                          <td class="text-center">Tipo de actividad</td>
-                                          <td th:text="*{salida.fecha_inicio}" class="text-center">Fecha de Inicio</td>
-                                          <td th:text="*{salida.fecha_termino}" class="text-center">Fecha de Término</td>
+                                       <tr th:each="persona : ${personas}">
+                                          <td th:text="${persona.rut}" class="text-center">Rut</td>
+                                          <td th:text="${persona.nombre}" class="text-center">Nombre</td>
+                                          <td th:text="${persona.apellido}" class="text-center">Apellido</td>
+                                          <td th:text="${persona.fecha_nacimiento}" class="text-center">Fecha de nacimiento</td>
+                                          <td th:text="${persona.telefono}" class="text-center">Telefono</td>
+                                          <td th:text="${persona.telefono_emergencia}" class="text-center">Telefono de emergencia</td>
                                           <td class="text-center">
-                                             <a class="btn btn-primary btn-sm" href="/usuario/form/">Editar</a>
                                              <a class="btn btn-danger btn-sm" href="/usuario/eliminar/">Eliminar</a>
-                                             <a class="btn btn-warning btn-sm btn-block my-1" th:href="@{/salidas/participantes/{id}(id=${salida.idSalida})}">Ver participantes</a>
                                           </td>
                                        </tr>
-                                       <p>
-                                       <div class="collapse hiddenRow" id="collapseExample">
-                                          <div class="">
-                                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                                          </div>
-                                       </div>
-                
                                     </tbody>
                                  </table>
                               </div>
-                              <div class="card-toolbar">
-                                  <a th:href="@{/salidas/crear}" ><button type="reset" class="btn btn-info mr-2 btn-sm"> Nueva Salida <i class="fa fa-pencil-square-o"></i></button></a>
-                           </div>
+                              <a class="btn btn-outline-secondary" href="panel_perfil_salidas.html"><i class="fa fa-arrow-left"></i> Volver </a>
                            </div>
                         </div>
                   
@@ -172,12 +153,12 @@
             </div>
          </div>
       </footer>
-      <script src="assets/vendor/jquery/jquery.min.js"></script>
-      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-      <script src="assets/vendor/counterup/counterup.min.js"></script>
-      <script src="assets/vendor/venobox/venobox.min.js"></script>
-      <script src="assets/js/main.js"></script>
+      <script src="/assets/vendor/jquery/jquery.min.js"></script>
+      <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+      <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="/assets/vendor/counterup/counterup.min.js"></script>
+      <script src="/assets/vendor/venobox/venobox.min.js"></script>
+      <script src="/assets/js/main.js"></script>
    </body>
 </html>

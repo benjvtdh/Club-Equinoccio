@@ -26,10 +26,15 @@ import org.springframework.web.servlet.view.RedirectView;
 public class SalidaControlador {
     @Autowired
     private final SalidaServicio salidaServicio;
+    
+    @Autowired
+    private final PersonaServicio personaServicio;
 
-    public SalidaControlador(SalidaServicio salidaServicio) {
+    public SalidaControlador(SalidaServicio salidaServicio, PersonaServicio personaServicio) {
         this.salidaServicio = salidaServicio;
+        this.personaServicio = personaServicio;
     }
+    
     
     //Listar salidas 
     @GetMapping("/salidas")
@@ -101,6 +106,7 @@ public class SalidaControlador {
     @PostMapping("/salidas/inscribirse/save/{idSalida}")
     public String guardar_persona(Persona persona, @PathVariable String idSalida ) throws Exception{
         Salida salida = salidaServicio.buscar(idSalida);
+        persona.setSalida(salida);
         salida.agregar_persona(persona);
         salidaServicio.guardar(salida);
         return "redirect:/salidas";
