@@ -63,7 +63,7 @@
                               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   <div class="media align-items-center">
 
-                                      <img class="avatar avatar-sm rounded-circle" alt="Imagen Usuario" src="/assets/img/perfil/usuario-1.jpg">
+                                      <img class="avatar avatar-sm rounded-circle" alt="Imagen Usuario" src="assets/img/perfil/usuario-1.jpg">
 
                                           <div class="media-body  ml-2  d-none d-lg-block">
                                               <span sec:authentication="name" class="mb-0 text-sm"></span>
@@ -136,17 +136,16 @@
                </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. El sabio error rechaza este dolor, el placer de volar</p>
          <div class="testimonials">
-            
                <div class="owl-carousel testimonials-carousel">
-                  <div class="testimonial-item">
-                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
+                  <div th:each="salida : ${salidas}" class="testimonial-item">
+                     <img src="/assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
                      <div class="testimonial-conten">
     
                          
                              
                              <div class="info">
                                  <div class="col-md-12">
-                                    <h3>Nombre salida</h3>
+                                    <h3 th:text="${salida.nombre_salida}" >Nombre salida</h3>
                                  </div>
                               </div>
                               <div class="category">
@@ -159,163 +158,11 @@
                                     <h4>Lugar</h4>
                                  </div>
                                  <div class="col-md-4">
-                                    <h3>05/03</h3>
+                                    <h3 th:text="${salida.fecha_inicio}" >05/03</h3>
                                     <h4>Fecha inicio</h4>
                                  </div>
                                  <div class="col-md-4">
-                                    <h3>15/03</h3>
-                                    <h4>Fecha termino</h4>
-                                 </div>
-                              </div>
-                              <div class="category">
-                                <h3>Escalada</h3>
-                                    <h4>Tipo de Actividad</h4>
-                              </div>
-                              
-                          
-                        <a href="single-salida.html" class="link"></a>                   
-                     </div>
-                  </div>
-                  <div class="testimonial-item">
-                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
-                     <div class="testimonial-conten">
-    
-                         
-                             
-                             <div class="info">
-                                 <div class="col-md-12">
-                                    <h3>Nombre salida</h3>
-                                 </div>
-                              </div>
-                              <div class="category">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
-                              </div>
-                             
-                              <div class="row meta">
-                                 <div class="col-md-4">
-                                    <h3>Nombre</h3>
-                                    <h4>Lugar</h4>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h3>05/03</h3>
-                                    <h4>Fecha inicio</h4>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h3>15/03</h3>
-                                    <h4>Fecha termino</h4>
-                                 </div>
-                              </div>
-                              <div class="category">
-                                <h3>Escalada</h3>
-                                    <h4>Tipo de Actividad</h4>
-                              </div>
-                              
-                          
-                        <a href="single-salida.html" class="link"></a>                   
-                     </div>
-                  </div>
-                  <div class="testimonial-item">
-                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
-                     <div class="testimonial-conten">
-    
-                         
-                             
-                             <div class="info">
-                                 <div class="col-md-12">
-                                    <h3>Nombre salida</h3>
-                                 </div>
-                              </div>
-                              <div class="category">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
-                              </div>
-                             
-                              <div class="row meta">
-                                 <div class="col-md-4">
-                                    <h3>Nombre</h3>
-                                    <h4>Lugar</h4>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h3>05/03</h3>
-                                    <h4>Fecha inicio</h4>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h3>15/03</h3>
-                                    <h4>Fecha termino</h4>
-                                 </div>
-                              </div>
-                              <div class="category">
-                                <h3>Escalada</h3>
-                                    <h4>Tipo de Actividad</h4>
-                              </div>
-                              
-                          
-                        <a href="single-salida.html" class="link"></a>                   
-                     </div>
-                  </div>
-                  <div class="testimonial-item">
-                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
-                     <div class="testimonial-conten">
-    
-                         
-                             
-                             <div class="info">
-                                 <div class="col-md-12">
-                                    <h3>Nombre salida</h3>
-                                 </div>
-                              </div>
-                              <div class="category">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
-                              </div>
-                             
-                              <div class="row meta">
-                                 <div class="col-md-4">
-                                    <h3>Nombre</h3>
-                                    <h4>Lugar</h4>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h3>05/03</h3>
-                                    <h4>Fecha inicio</h4>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h3>15/03</h3>
-                                    <h4>Fecha termino</h4>
-                                 </div>
-                              </div>
-                              <div class="category">
-                                <h3>Escalada</h3>
-                                    <h4>Tipo de Actividad</h4>
-                              </div>
-                              
-                          
-                        <a href="single-salida.html" class="link"></a>                   
-                     </div>
-                  </div>
-                  <div class="testimonial-item">
-                     <img src="assets/img/portfolio/portfolio-3.jpg" alt="" class="testimonial-img rounded">
-                     <div class="testimonial-conten">
-    
-                         
-                             
-                             <div class="info">
-                                 <div class="col-md-12">
-                                    <h3>Nombre salida</h3>
-                                 </div>
-                              </div>
-                              <div class="category">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
-                              </div>
-                             
-                              <div class="row meta">
-                                 <div class="col-md-4">
-                                    <h3>Nombre</h3>
-                                    <h4>Lugar</h4>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h3>05/03</h3>
-                                    <h4>Fecha inicio</h4>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h3>15/03</h3>
+                                    <h3 th:text="${salida.fecha_termino}">15/03</h3>
                                     <h4>Fecha termino</h4>
                                  </div>
                               </div>
