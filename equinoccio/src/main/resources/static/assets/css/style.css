@@ -21,11 +21,6 @@ body{
     font-size: 18px!important;
 }
 
-.btn-outline-secondary {
-    color: #ffffff;
-    border-color: #ffffff;
-}
-
 .text-muted {
     color: #d1d1d1 !important;
 }
@@ -224,6 +219,11 @@ section {
   padding-bottom: 30px;
 }
 
+.section-title-2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
@@ -406,18 +406,22 @@ section {
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Testimonials
---------------------------------------------------------------*/
+
 .testimonials .testimonial-item {
   box-sizing: content-box;
-  padding: 30px 30px 0 30px;
+  padding: 0;
   margin: 30px 15px;
   text-align: center;
   min-height: 350px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   background: #fff;
 }
+
+.testimonials .testimonial-item .testimonial-conten {
+    padding: 36px ;
+    text-align: center;
+}
+
 
 .testimonials .testimonial-item .testimonial-img {
   width: 100%;
@@ -483,6 +487,31 @@ section {
   .testimonials {
     margin: 30px 10px;
   }
+}
+
+.margin-leftright-null {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.meta {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding-bottom: 18px;
+}
+
+.category {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.testimonial-conten a.link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -883,7 +912,7 @@ section {
 
 .card-toolbar{
     
-    margin: 0 auto;
+    text-align: right;
     padding-bottom: 15px;
 }
 
@@ -903,4 +932,117 @@ section {
 
 .hiddenRow {
     padding: 0 !important;
+}
+
+
+/*--------------------------------------------------------------
+# Pagina salida
+--------------------------------------------------------------*/
+  .resumen-salida {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      margin-top: 60px;
+}
+
+.resumen-salida p  {
+  margin: 20px;
+}
+
+.descripcion-salida p  {
+  margin: 20px;
+}
+
+.iconos-caracteristicas {
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  max-width: 600px;
+}
+
+.iconos-caracteristicas li {
+  /* flex: 1; */
+  display: flex;
+}
+.iconos-caracteristicas li img {
+  margin-right: 2rem;
+}
+
+/*--------------------------------------------------------------
+# HEADER 2
+--------------------------------------------------------------*/
+
+#hero2 {
+  width: 100%;
+  height: 65vh;
+  background: url("../img/Salidas/salida-01.jpg") top center;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 0;
+}
+
+#hero2 .hero2-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#hero2 h1 {
+  margin: 0 0 10px 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: -1px 0 2px #2f4d5a;
+}
+
+#hero2 img {
+  margin-top: 40px;
+}
+
+#hero2 .btn-get-started {
+  font-size: 36px;
+  display: inline-block;
+  padding: 4px 0;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+  margin: 10px;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#hero2 .btn-get-started:hover {
+  padding-top: 8px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 1024px) {
+  #hero2 {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero2 h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero2 h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
 }

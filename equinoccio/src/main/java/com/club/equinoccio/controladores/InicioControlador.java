@@ -1,6 +1,7 @@
 package com.club.equinoccio.controladores;
 
 import com.club.equinoccio.entidades.Usuario;
+import com.club.equinoccio.servicios.SalidaServicio;
 import com.club.equinoccio.servicios.UsuarioServicio;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,20 @@ public class InicioControlador {
     
     @Autowired
     private final UsuarioServicio usuarioServicio;
+    
+    @Autowired
+    private final SalidaServicio salidaServicio;
 
-    public InicioControlador(UsuarioServicio usuarioServicio) {
+    public InicioControlador(UsuarioServicio usuarioServicio, SalidaServicio salidaServicio) {
         this.usuarioServicio = usuarioServicio;
+        this.salidaServicio = salidaServicio;
     }
+
+    
     @GetMapping("/")
     public ModelAndView inicio(){
         ModelAndView mv = new ModelAndView("index");
+        mv.addObject("salidas", salidaServicio.buscarTodos());
         return mv;
     }
     
