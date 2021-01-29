@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <title>Formulario de Inscripción - Club Equinoccio</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <link rel="shortcut icon" href="assets/img/icono.png" type="img/x-icon">
+      <link href="assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="assets/css/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <header id="header" class="fixed-top header-transparent">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
+               <div id="logo">
+                  <a class="" href="index.html">
+                  <img src="assets/img/icono_preview_rev_1.png" width="85" height="85" class="normal" >
+                  </a>
+               </div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#header">Inicio</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#about">Nosotros</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#services">Salidas</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#">Galeria</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link scrollto" href="#">Contacto</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Únete</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="d-flex justify-content-end align-items-center">
+                  <a class="btn btn-sm btn-outline-secondary" href="login.html">Ingresa</a>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <section class="salida-form">
+         <div class="container">
+            <div class="card-header">
+               <h3 class="font-weight-bold text-center pt-4">Formulario de Inscripción </h3>
+            </div>
+            <form action="#" method="post" class="borde p-4" >
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col">
+                        <label for="inputName">Nombre</label>
+                        <input type="text" class="form-control">
+                     </div>
+                     <div class="col">
+                        <label for="inputLastName">Apellido</label>
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="inputRut">Rut</label>
+                  <input type="text" class="form-control" id="inputRut">
+               </div>
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col">
+                        <label for="inputNacimiento">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fechaNacimiento">
+                     </div>
+                     <div class="col">
+                        <label for="inputNacionalidad">Nacionalidad</label>
+                        <input type="text" class="form-control" id="inputNacionalidad">
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="inputAddress">Domicilio</label>
+                  <input type="text" class="form-control" id="inputAddress">
+               </div>
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col">
+                        <label for="inputCity">Región</label>
+                        <select id="regiones" class="form-control"></select>
+                     </div>
+                     <div class="col">
+                        <label for="inputState">Comuna</label>
+                        <select id="comunas" class="form-control"></select>
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="inputEmail">Télefono</label>
+                  <input type="number" class="form-control" id="inputEmail">
+               </div>
+               <div class="form-group">
+                  <label for="inputEmail">Télefono de Emergencia (familiar o cercano)</label>
+                  <input type="number" class="form-control" id="inputEmail">
+               </div>
+               <div class="form-group">
+                  <div class="form-check">
+                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                     <label class="form-check-label" for="invalidCheck">
+                     Acepto terminos y condiciones
+                     </label>
+                     <div class="invalid-feedback">
+                        Debe aceptar terminos antes de enviar.
+                     </div>
+                  </div>
+               </div>
+               <div class="container mt-5 mb-xl-5 text-center">
+                  <button class="btn btn-primary" type="submit">Inscribir</button>
+               </div>
+            </form>
+         </div>
+      </section>
+      <footer id="footer">
+         <div class="container">
+            <div class="social-links">
+               <a href="https://www.facebook.com/Club-Deportivo-Equinoccio-1915192972122214" class="twitter"><i class="fa fa-facebook"></i></a>
+               <a href="#" class="facebook"><i class="fa fa-twitter"></i></a>
+               <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            </div>
+            <div class="copyright">
+               © <strong><span>Equinoccio - Club deportivo</span></strong>. Todos los derechos reservados.
+            </div>
+         </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <script src="assets/vendor/jquery/jquery.min.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function(){
+           $("#icon-click").click(function(){
+             $("#icon").toggleClass('fa-eye-slash');
+         
+             var input = $("#pass");
+             if(input.attr("type")==="password"){
+               input.attr("type", "text");
+             }
+             else{
+               input.attr("type", "password");
+             }
+           });
+         
+         });
+      </script>
+      <script>
+         var RegionesYcomunas = {
+         
+         "regiones": [{
+           "NombreRegion": "Región de Arica y Parinacota",
+           "comunas": ["Arica", "Camarones", "Putre", "General Lagos"]
+         },
+         {
+           "NombreRegion": "Región de Tarapacá",
+           "comunas": ["Iquique", "Alto Hospicio", "Pozo Almonte", "Camiña", "Colchane", "Huara", "Pica"]
+         },
+         {
+           "NombreRegion": "Región de Antofagasta",
+           "comunas": ["Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollagüe", "San Pedro de Atacama", "Tocopilla", "María Elena"]
+         },
+         {
+           "NombreRegion": "Región de Atacama",
+           "comunas": ["Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco"]
+         },
+         {
+           "NombreRegion": "Región de Coquimbo",
+           "comunas": ["La Serena", "Coquimbo", "Andacollo", "La Higuera", "Paiguano", "Vicuña", "Illapel", "Canela", "Los Vilos", "Salamanca", "Ovalle", "Combarbalá", "Monte Patria", "Punitaqui", "Río Hurtado"]
+         },
+         {
+           "NombreRegion": "Región de Valparaíso",
+           "comunas": ["Valparaíso", "Casablanca", "Concón", "Juan Fernández", "Puchuncaví", "Quintero", "Viña del Mar", "Isla de Pascua", "Los Andes", "Calle Larga", "Rinconada", "San Esteban", "La Ligua", "Cabildo", "Papudo", "Petorca", "Zapallar", "Quillota", "Calera", "Hijuelas", "La Cruz", "Nogales", "San Antonio", "Algarrobo", "Cartagena", "El Quisco", "El Tabo", "Santo Domingo", "San Felipe", "Catemu", "Llaillay", "Panquehue", "Putaendo", "Santa María", "Quilpué", "Limache", "Olmué", "Villa Alemana"]
+         },
+         {
+           "NombreRegion": "Región del Libertador Gral. Bernardo O’Higgins",
+           "comunas": ["Rancagua", "Codegua", "Coinco", "Coltauco", "Doñihue", "Graneros", "Las Cabras", "Machalí", "Malloa", "Mostazal", "Olivar", "Peumo", "Pichidegua", "Quinta de Tilcoco", "Rengo", "Requínoa", "San Vicente", "Pichilemu", "La Estrella", "Litueche", "Marchihue", "Navidad", "Paredones", "San Fernando", "Chépica", "Chimbarongo", "Lolol", "Nancagua", "Palmilla", "Peralillo", "Placilla", "Pumanque", "Santa Cruz"]
+         },
+         {
+           "NombreRegion": "Región del Maule",
+           "comunas": ["Talca", "Constitución", "Curepto", "Empedrado", "Maule", "Pelarco", "Pencahue", "Río Claro", "San Clemente", "San Rafael", "Cauquenes", "Chanco", "Pelluhue", "Curicó", "Hualañé", "Licantén", "Molina", "Rauco", "Romeral", "Sagrada Familia", "Teno", "Vichuquén", "Linares", "Colbún", "Longaví", "Parral", "Retiro", "San Javier", "Villa Alegre", "Yerbas Buenas"]
+         },
+         {
+           "NombreRegion": "Región de Ñuble",
+           "comunas": ["Cobquecura", "Coelemu", "Ninhue", "Portezuelo", "Quirihue", "Ránquil", "Trehuaco", "Bulnes", "Chillán Viejo", " Chillán", " El Carmen", "Pemuco", "Pinto", "Quillón", "San Ignacio", "Yungay", "Coihueco", "Ñiquén", "San Carlos", "San Fabián", "San Nicolás"]
+         },
+         {
+           "NombreRegion": "Región del Biobío",
+           "comunas": ["Concepción", "Coronel", "Chiguayante", "Florida", "Hualqui", "Lota", "Penco", "San Pedro de la Paz", "Santa Juana", "Talcahuano", "Tomé", "Hualpén", "Lebu", "Arauco", "Cañete", "Contulmo", "Curanilahue", "Los Álamos", "Tirúa", "Los Ángeles", "Antuco", "Cabrero", "Laja", "Mulchén", "Nacimiento", "Negrete", "Quilaco", "Quilleco", "San Rosendo", "Santa Bárbara", "Tucapel", "Yumbel", "Alto Biobío"] 
+         },
+         {
+           "NombreRegion": "Región de la Araucanía",
+           "comunas": ["Temuco", "Carahue", "Cunco", "Curarrehue", "Freire", "Galvarino", "Gorbea", "Lautaro", "Loncoche", "Melipeuco", "Nueva Imperial", "Padre las Casas", "Perquenco", "Pitrufquén", "Pucón", "Saavedra", "Teodoro Schmidt", "Toltén", "Vilcún", "Villarrica", "Cholchol", "Angol", "Collipulli", "Curacautín", "Ercilla", "Lonquimay", "Los Sauces", "Lumaco", "Purén", "Renaico", "Traiguén", "Victoria", ]
+         },
+         {
+           "NombreRegion": "Región de Los Ríos",
+           "comunas": ["Valdivia", "Corral", "Lanco", "Los Lagos", "Máfil", "Mariquina", "Paillaco", "Panguipulli", "La Unión", "Futrono", "Lago Ranco", "Río Bueno"]
+         },
+         {
+           "NombreRegion": "Región de Los Lagos",
+           "comunas": ["Puerto Montt", "Calbuco", "Cochamó", "Fresia", "Frutillar", "Los Muermos", "Llanquihue", "Maullín", "Puerto Varas", "Castro", "Ancud", "Chonchi", "Curaco de Vélez", "Dalcahue", "Puqueldón", "Queilén", "Quellón", "Quemchi", "Quinchao", "Osorno", "Puerto Octay", "Purranque", "Puyehue", "Río Negro", "San Juan de la Costa", "San Pablo", "Chaitén", "Futaleufú", "Hualaihué", "Palena"]
+         },
+         {
+           "NombreRegion": "Región Aysén del Gral. Carlos Ibáñez del Campo",
+           "comunas": ["Coihaique", "Lago Verde", "Aisén", "Cisnes", "Guaitecas", "Cochrane", "O’Higgins", "Tortel", "Chile Chico", "Río Ibáñez"]
+         },
+         {
+           "NombreRegion": "Región de Magallanes y de la Antártica Chilena",
+           "comunas": ["Punta Arenas", "Laguna Blanca", "Río Verde", "San Gregorio", "Cabo de Hornos (Ex Navarino)", "Antártica", "Porvenir", "Primavera", "Timaukel", "Natales", "Torres del Paine"]
+         },
+         {
+           "NombreRegion": "Región Metropolitana de Santiago",
+           "comunas": ["Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Joaquín", "San Miguel", "San Ramón", "Vitacura", "Puente Alto", "Pirque", "San José de Maipo", "Colina", "Lampa", "Tiltil", "San Bernardo", "Buin", "Calera de Tango", "Paine", "Melipilla", "Alhué", "Curacaví", "María Pinto", "San Pedro", "Talagante", "El Monte", "Isla de Maipo", "Padre Hurtado", "Peñaflor"]
+         }]
+         }
+         
+         
+         jQuery(document).ready(function () {
+         
+         var iRegion = 0;
+         var htmlRegion = '<option value="sin-region">Seleccione región</option><option value="sin-region">--</option>';
+         var htmlComunas = '<option value="sin-region">Seleccione comuna</option><option value="sin-region">--</option>';
+         
+         jQuery.each(RegionesYcomunas.regiones, function () {
+         htmlRegion = htmlRegion + '<option value="' + RegionesYcomunas.regiones[iRegion].NombreRegion + '">' + RegionesYcomunas.regiones[iRegion].NombreRegion + '</option>';
+         iRegion++;
+         });
+         
+         jQuery('#regiones').html(htmlRegion);
+         jQuery('#comunas').html(htmlComunas);
+         
+         jQuery('#regiones').change(function () {
+         var iRegiones = 0;
+         var valorRegion = jQuery(this).val();
+         var htmlComuna = '<option value="sin-comuna">Seleccione comuna</option><option value="sin-comuna">--</option>';
+         jQuery.each(RegionesYcomunas.regiones, function () {
+           if (RegionesYcomunas.regiones[iRegiones].NombreRegion == valorRegion) {
+             var iComunas = 0;
+             jQuery.each(RegionesYcomunas.regiones[iRegiones].comunas, function () {
+               htmlComuna = htmlComuna + '<option value="' + RegionesYcomunas.regiones[iRegiones].comunas[iComunas] + '">' + RegionesYcomunas.regiones[iRegiones].comunas[iComunas] + '</option>';
+               iComunas++;
+             });
+           }
+           iRegiones++;
+         });
+         jQuery('#comunas').html(htmlComuna);
+         });
+         jQuery('#comunas').change(function () {
+         if (jQuery(this).val() == 'sin-region') {
+           alert('selecciones Región');
+         } else if (jQuery(this).val() == 'sin-comuna') {
+           alert('selecciones Comuna');
+         }
+         });
+         jQuery('#regiones').change(function () {
+         if (jQuery(this).val() == 'sin-region') {
+           alert('selecciones Región');
+         }
+         });
+         
+         });
+      </script>
+   </body>
+</html>
