@@ -111,6 +111,7 @@
                                    
                                </div>
                               <div th:if="${!salidas.empty}" class="table-responsive">
+                                  <div th:if="${msg != null}" class="alert alert-success" th:text="${msg}" role="alert"></div>
                                  <table class="table">
                                     <thead class="thead-dark">
                                        <tr>

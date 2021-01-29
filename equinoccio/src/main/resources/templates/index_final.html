@@ -50,6 +50,7 @@
                   </ul>
                </div>
                <div class="d-flex justify-content-end align-items-center">
+                   <!-- Si no esta logeado, aparece esto ---->
                    <div sec:authorize="isAnonymous()">
                       <a class="btn btn-sm btn-outline-secondary" th:href="@{/index}">Ingresa</a>
                   </div>
