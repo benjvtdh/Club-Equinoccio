@@ -95,7 +95,7 @@ public class SalidaControlador {
     public ModelAndView crear_persona(Salida salida, @PathVariable String idSalida) throws Exception{
         Persona persona = new Persona();
         salida = salidaServicio.buscar(idSalida);
-        ModelAndView mv = new ModelAndView("form-personas");
+        ModelAndView mv = new ModelAndView("personas");
         mv.addObject("salida", salida);
         mv.addObject("persona", persona);
         return mv;
