@@ -948,7 +948,7 @@ section {
 --------------------------------------------------------------*/
   .resumen-salida {
     text-align:  left;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .resumen-salida p  {
@@ -984,13 +984,13 @@ section {
 # HEADER 2
 --------------------------------------------------------------*/
 
-#hero2 {
+#hero2  img{
   width: 100%;
-  height: 65vh;
-  background: top center;
-  background-size: cover;
-  position: relative;
+  height: 60vh;
   margin-bottom: 0;
+  object-fit: cover;
+  object-position: center center;
+     filter: blur(1.5px);
 }
 
 #hero2 .hero2-container {
@@ -1007,7 +1007,7 @@ section {
 }
 
 #hero2 h1 {
-  margin: 0 0 10px 0;
+  margin: 0 0 40px 0;
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
@@ -1046,18 +1046,26 @@ section {
 }
 
 @media (max-width: 768px) {
+    
+    #hero2{
+        padding: 60px 0 0 0;
+    }
+    
+    .hero2-container{
+     position:relative;   
+    }
     .iconos-salida{
         text-align: center !important;
     }
     
-    #hero2 {
-  height:40vh;
+    #hero2 img {
+  height:30vh;
  }
     
   #hero2 h1 {
     font-size: 28px;
     line-height: 36px;
-    margin-bottom: -70px;
+    margin-top: -250px;
   }
 }
 
