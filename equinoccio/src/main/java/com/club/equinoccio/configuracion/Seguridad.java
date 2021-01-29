@@ -32,7 +32,9 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 //Recurso estáticos
-                .antMatchers("/assets/**").permitAll()
+                .antMatchers(
+                        "/assets/**",
+                        "/img/**").permitAll()
                 // Vistas públicas
                 .antMatchers(
                         "/",
