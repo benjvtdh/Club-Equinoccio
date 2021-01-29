@@ -48,7 +48,7 @@ public class SalidaControlador {
     @GetMapping("/salidas/crear")
     public ModelAndView crear_salida(){
         Salida salida = new Salida();
-        ModelAndView mv = new ModelAndView("form-salidas");
+        ModelAndView mv = new ModelAndView("salidas");
         mv.addObject("salida", salida);
         System.out.println("Se creo una salida");
         return mv;
