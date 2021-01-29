@@ -50,9 +50,8 @@
                   </ul>
                </div>
                <div class="d-flex justify-content-end align-items-center">
-                   
-                   <!-- Si el usuario no esta logeado, aparece esto-->
-                  <div sec:authorize="isAnonymous()">
+                   <!-- Si no esta logeado, aparece esto ---->
+                   <div sec:authorize="isAnonymous()">
                       <a class="btn btn-sm btn-outline-secondary" th:href="@{/index}">Ingresa</a>
                   </div>
                   
@@ -75,14 +74,7 @@
                                       <i class="fa fa-user"></i>
                                       <span>Mi perfil</span>
                                   </a>
-                                  <a href="#!" class="dropdown-item">
-                                      <i class="fa fa-cog"></i>
-                                      <span>Configuracion</span>
-                                  </a>
-                                  <a href="#!" class="dropdown-item">
-                                      <i class="fa fa-calendar"></i>
-                                      <span>Salidas</span>
-                                  </a>
+
                                   <div class="dropdown-divider"></div>
                                   <a th:href="@{/logout}" class="dropdown-item">
                                       <i class="fa fa-sign-out"></i>
@@ -97,6 +89,7 @@
             </nav>
          </div>
       </header>
+       
       <section id="hero">
          <div class="hero-container">
             <img src="assets/img/icono_preview_rev_1.png" alt="logo" width="250" height="250">
@@ -136,29 +129,27 @@
                </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. El sabio error rechaza este dolor, el placer de volar</p>
          <div class="testimonials">
+            
                <div class="owl-carousel testimonials-carousel">
                   <div th:each="salida : ${salidas}" class="testimonial-item">
-                     <img th:src="@{/img/img-salidas/}+${salida.foto}" alt="" class="testimonial-img rounded">
+                     <img th:src="@{/img/img-salidas/{foto}(foto=${salida.foto})}" alt="" class="testimonial-img rounded img-fluid">
                      <div class="testimonial-conten">
-    
-                         
-                             
                              <div class="info">
                                  <div class="col-md-12">
-                                    <h3 th:text="${salida.nombre_salida}" >Nombre salida</h3>
+                                    <h3 th:text="${salida.nombre_salida}">Nombre salida</h3>
                                  </div>
                               </div>
                               <div class="category">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
+                                  <p th:text="${salida.descripcion}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin embargo, el maestro de obras, no sé cómo, para elegir los modos</p>
                               </div>
                              
                               <div class="row meta">
                                  <div class="col-md-4">
-                                    <h3>Nombre</h3>
+                                    <h3 th:text="${salida.lugar_visitar}">Nombre</h3>
                                     <h4>Lugar</h4>
                                  </div>
                                  <div class="col-md-4">
-                                    <h3 th:text="${salida.fecha_inicio}" >05/03</h3>
+                                    <h3 th:text="${salida.fecha_inicio}">05/03</h3>
                                     <h4>Fecha inicio</h4>
                                  </div>
                                  <div class="col-md-4">
@@ -167,12 +158,12 @@
                                  </div>
                               </div>
                               <div class="category">
-                                <h3>Escalada</h3>
+                                <h3 th:text="*{salida.tipo_actividad}">Escalada</h3>
                                     <h4>Tipo de Actividad</h4>
                               </div>
                               
                           
-                        <a th:href="@{/salidas/}+${salida.idSalida}" class="link"></a>                   
+                        <a th:href="@{/salidas/{id}(id=${salida.idSalida})}" class="link"></a>                   
                      </div>
                   </div>
                </div>

@@ -1,12 +1,15 @@
 package com.club.equinoccio.controladores;
 
 import com.club.equinoccio.entidades.Usuario;
+import com.club.equinoccio.servicios.SalidaServicio;
 import com.club.equinoccio.servicios.UsuarioServicio;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,13 +21,20 @@ public class InicioControlador {
     
     @Autowired
     private final UsuarioServicio usuarioServicio;
+    
+    @Autowired
+    private final SalidaServicio salidaServicio;
 
-    public InicioControlador(UsuarioServicio usuarioServicio) {
+    public InicioControlador(UsuarioServicio usuarioServicio, SalidaServicio salidaServicio) {
         this.usuarioServicio = usuarioServicio;
+        this.salidaServicio = salidaServicio;
     }
+
+    
     @GetMapping("/")
     public ModelAndView inicio(){
-        ModelAndView mv = new ModelAndView("index");
+        ModelAndView mv = new ModelAndView("index_final");
+        mv.addObject("salidas", salidaServicio.buscarTodos());
         return mv;
     }
     
@@ -59,6 +69,13 @@ public class InicioControlador {
 //        return mv;
 //        
         
+        
+    }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request){
+        SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
+        logoutHandler.logout(request, null, null);
+        return "redirect:/";
         
     }
 }

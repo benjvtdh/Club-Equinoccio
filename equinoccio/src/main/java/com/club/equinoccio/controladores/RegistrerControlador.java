@@ -30,7 +30,7 @@ public class RegistrerControlador {
     @GetMapping("/register")
     public ModelAndView crear(){  
         Usuario usuario = new Usuario();
-        ModelAndView mv = new ModelAndView("form-register");
+        ModelAndView mv = new ModelAndView("register");
         mv.addObject("usuario",usuario);
         return mv;
     }

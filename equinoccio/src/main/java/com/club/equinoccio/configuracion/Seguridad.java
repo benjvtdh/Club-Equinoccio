@@ -32,7 +32,9 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 //Recurso estáticos
-                .antMatchers("/assets/**").permitAll()
+                .antMatchers(
+                        "/assets/**",
+                        "/img/**").permitAll()
                 // Vistas públicas
                 .antMatchers(
                         "/",
@@ -45,8 +47,13 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 //Vista login
-                .formLogin().loginPage("/login").permitAll();
+                .formLogin().loginPage("/login").permitAll()
+                .and()
+                .logout()
+                .logoutUrl("/logout")  
+                .logoutSuccessUrl("/");  
                 http.csrf().disable();
+                
                 
     }
 }
